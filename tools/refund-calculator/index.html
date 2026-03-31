@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>確定申告 還付金シミュレーター｜医療費控除・ふるさと納税・住宅ローン控除【2026年】</title>
+  <meta name="description" content="確定申告で戻ってくる還付金を無料計算。医療費控除・ふるさと納税・住宅ローン控除の還付額をシミュレーション。申告するメリットを判定します。">
+  <meta name="keywords" content="還付金 計算, 確定申告 還付金 シミュレーター, 医療費控除 計算, ふるさと納税 還付金, 住宅ローン控除 計算">
+  <meta property="og:title" content="確定申告 還付金シミュレーター【2026年】">
+  <meta property="og:description" content="医療費控除・ふるさと納税・住宅ローン控除で還付される金額を計算。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools.vercel.app/tools/refund-calculator/">
+  <link rel="canonical" href="https://tax-tools.vercel.app/tools/refund-calculator/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "確定申告 還付金シミュレーター",
+    "url": "https://tax-tools.vercel.app/tools/refund-calculator/",
+    "description": "確定申告で戻ってくる還付金を医療費控除・ふるさと納税・住宅ローン控除で計算",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>確定申告 還付金シミュレーター</h1>
+      <p>医療費控除・ふるさと納税・住宅ローン控除で戻ってくる金額を計算。申告するメリットを判定します。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>›</span>確定申告 還付金シミュレーター
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>基本情報</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="annualIncome">年収（万円）</label>
+              <input type="number" id="annualIncome" placeholder="例: 500" min="0">
+              <div class="hint">額面の年収（税込）</div>
+            </div>
+            <div class="form-group">
+              <label for="withheld">源泉徴収済み所得税額（万円）</label>
+              <input type="number" id="withheld" placeholder="例: 15" min="0">
+              <div class="hint">源泉徴収票の「源泉徴収税額」欄</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-card">
+          <h2>控除項目</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="medicalExpense">年間医療費（万円）</label>
+              <input type="number" id="medicalExpense" placeholder="例: 30" min="0" value="0">
+              <div class="hint">保険適用後の自己負担額。10万円超が控除対象</div>
+            </div>
+            <div class="form-group">
+              <label for="furusato">ふるさと納税額（万円）</label>
+              <input type="number" id="furusato" placeholder="例: 5" min="0" value="0">
+              <div class="hint">寄附金の合計額</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="housingLoan">住宅ローン控除額（万円）</label>
+              <input type="number" id="housingLoan" placeholder="例: 20" min="0" value="0">
+              <div class="hint">年末ローン残高の0.7%（2026年入居の場合）</div>
+            </div>
+            <div class="form-group">
+              <label for="lifeInsurance">生命保険料控除（万円）</label>
+              <input type="number" id="lifeInsurance" placeholder="例: 5" min="0" value="0">
+              <div class="hint">新制度：一般+介護医療+個人年金（各上限4万、合計12万）</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ideco">iDeCo掛金（万円/年）</label>
+              <input type="number" id="ideco" placeholder="例: 27.6" min="0" value="0">
+              <div class="hint">小規模企業共済等掛金控除</div>
+            </div>
+            <div class="form-group">
+              <label for="earthquake">地震保険料控除（万円）</label>
+              <input type="number" id="earthquake" placeholder="例: 2" min="0" value="0">
+              <div class="hint">上限5万円</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" onclick="calculate()">還付金を計算する</button>
+        </div>
+
+        <div class="results-area" id="results">
+          <div class="result-summary" id="refundSummary"></div>
+
+          <div class="calc-card">
+            <h2>控除・還付の内訳</h2>
+            <table class="result-table">
+              <thead><tr><th>項目</th><th>控除額</th><th>節税効果（概算）</th></tr></thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+
+          <div class="disclaimer">
+            ※ この計算は目安です。実際の還付額は他の控除や個別の状況によって異なります。正確な金額は税理士または税務署にご確認ください。住宅ローン控除は税額控除のため、所得税額を上限に直接減額されます。
+          </div>
+        </div>
+      </section>
+
+      <div class="affiliate-section">
+        <h3>確定申告をもっと簡単にしたい方へ</h3>
+        <p>クラウド会計ソフトなら、医療費控除やふるさと納税の申告書も自動作成。e-Taxにも対応。</p>
+        <div class="affiliate-links">
+          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
+          <a href="#affiliate-yayoi" class="affiliate-btn">やよいの青色申告オンライン →</a>
+        </div>
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="faq-section" style="padding-left:0;padding-right:0;">
+        <h2>還付金FAQ</h2>
+        <details class="faq-item">
+          <summary>還付金はいつ振り込まれますか？</summary>
+          <div class="faq-answer">e-Taxで申告した場合は約2〜3週間、紙の申告書を提出した場合は1〜2ヶ月程度で指定口座に振り込まれます。確定申告期間（2月16日〜3月15日）の初期に申告すると、比較的早く処理されます。</div>
+        </details>
+        <details class="faq-item">
+          <summary>医療費控除はいくらから使えますか？</summary>
+          <div class="faq-answer">年間の医療費が10万円（総所得200万円未満の場合は総所得の5%）を超えた場合に、超えた分が所得控除の対象になります。上限は200万円です。通院の交通費（公共交通機関）も対象に含まれます。</div>
+        </details>
+        <details class="faq-item">
+          <summary>ふるさと納税のワンストップ特例と確定申告の違いは？</summary>
+          <div class="faq-answer">ワンストップ特例は確定申告不要で手軽ですが、寄附先は5自治体までです。確定申告をする場合は自治体数の制限はなく、他の控除（医療費控除など）と併用できます。なお、確定申告をする場合はワンストップ特例は無効になるため、全ての寄附先を確定申告で申告する必要があります。</div>
+        </details>
+      </section>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved. | <a href="/">ホームへ戻る</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function calculate() {
+    const income = parseFloat(document.getElementById('annualIncome').value);
+    const withheld = parseFloat(document.getElementById('withheld').value);
+    if (!income || withheld === undefined || isNaN(withheld)) {
+      alert('年収と源泉徴収税額を入力してください');
+      return;
+    }
+
+    const medical = parseFloat(document.getElementById('medicalExpense').value) || 0;
+    const furusato = parseFloat(document.getElementById('furusato').value) || 0;
+    const housingLoan = parseFloat(document.getElementById('housingLoan').value) || 0;
+    const lifeIns = parseFloat(document.getElementById('lifeInsurance').value) || 0;
+    const ideco = parseFloat(document.getElementById('ideco').value) || 0;
+    const earthquake = parseFloat(document.getElementById('earthquake').value) || 0;
+
+    // 給与所得控除
+    const salaryDeduction = calcSalaryDeduction(income);
+    const salaryIncome = income - salaryDeduction;
+
+    // 社会保険料控除（概算15%）
+    const socialIns = income * 0.15;
+
+    // 年末調整で適用済みの控除（基礎控除+社保+生命保険+地震保険）
+    const basicDeduction = 48;
+    const lifeInsDeduction = Math.min(lifeIns, 12); // 上限12万
+    const earthquakeDeduction = Math.min(earthquake, 5); // 上限5万
+
+    // 年末調整後の課税所得（概算）
+    const adjustedTaxable = Math.max(salaryIncome - basicDeduction - socialIns - lifeInsDeduction - earthquakeDeduction, 0);
+
+    // 確定申告で追加できる控除
+    // 医療費控除
+    const medicalDeduction = Math.max(medical - 10, 0); // 10万円超過分
+    const medicalDeductionCapped = Math.min(medicalDeduction, 200); // 上限200万
+
+    // ふるさと納税（寄附金控除）= 寄附額 - 2000円（0.2万円）
+    const furusatoDeduction = Math.max(furusato - 0.2, 0);
+
+    // iDeCo（小規模企業共済等掛金控除）
+    const idecoDeduction = ideco;
+
+    // 確定申告で追加する所得控除合計
+    const additionalDeduction = medicalDeductionCapped + furusatoDeduction + idecoDeduction;
+
+    // 再計算後の課税所得
+    const newTaxable = Math.max(adjustedTaxable - additionalDeduction, 0);
+
+    // 所得税（確定申告前後）
+    const taxBefore = calcIncomeTax(adjustedTaxable);
+    const taxAfter = calcIncomeTax(newTaxable);
+
+    // 所得控除による還付
+    let refundFromDeductions = taxBefore - taxAfter;
+
+    // 住宅ローン控除（税額控除 — 所得税から直接引く）
+    const housingRefund = Math.min(housingLoan, taxAfter); // 所得税額が上限
+    const totalTaxAfterHousing = taxAfter - housingRefund;
+
+    // 復興特別所得税
+    const reconstructionBefore = taxBefore * 0.021;
+    const reconstructionAfter = totalTaxAfterHousing * 0.021;
+
+    // 最終的な所得税額
+    const finalTax = totalTaxAfterHousing + reconstructionAfter;
+
+    // 還付金 = 源泉徴収済み - 最終所得税
+    const refund = Math.max(withheld - finalTax, 0);
+    const additionalPayment = Math.max(finalTax - withheld, 0);
+
+    // 住民税への影響（ふるさと納税の住民税分は別途減額）
+    const furusatoResidentTax = furusato > 0 ? Math.min(furusato * 0.9, salaryIncome * 0.2 * 0.1) : 0;
+
+    // 各控除の節税効果（概算）
+    const marginalRate = getMarginalRate(adjustedTaxable);
+    const details = [];
+    if (medicalDeductionCapped > 0) details.push({ name: '医療費控除', deduction: medicalDeductionCapped, effect: medicalDeductionCapped * marginalRate });
+    if (furusatoDeduction > 0) details.push({ name: 'ふるさと納税（寄附金控除）', deduction: furusatoDeduction, effect: furusatoDeduction * marginalRate });
+    if (idecoDeduction > 0) details.push({ name: 'iDeCo（小規模企業共済等掛金）', deduction: idecoDeduction, effect: idecoDeduction * marginalRate });
+    if (housingLoan > 0) details.push({ name: '住宅ローン控除（税額控除）', deduction: housingRefund, effect: housingRefund });
+
+    // Display
+    const summary = document.getElementById('refundSummary');
+    if (refund > 0) {
+      summary.innerHTML = `
+        <h3>還付金額</h3>
+        <div class="amount" style="color:#10b981">${formatYen(refund)}万円</div>
+        <div class="sub">確定申告で約${formatYen(refund)}万円が戻ってきます</div>
+      `;
+    } else if (additionalPayment > 0) {
+      summary.innerHTML = `
+        <h3>追加納税額</h3>
+        <div class="amount" style="color:#ef4444">${formatYen(additionalPayment)}万円</div>
+        <div class="sub">源泉徴収額が不足しているため、追加納付が必要です</div>
+      `;
+    } else {
+      summary.innerHTML = `
+        <h3>還付金額</h3>
+        <div class="amount">0万円</div>
+        <div class="sub">還付も追加納付もありません</div>
+      `;
+    }
+
+    // Detail table
+    let rows = details.map(d =>
+      `<tr><td>${d.name}</td><td>${formatYen(d.deduction)}万円</td><td>${formatYen(d.effect)}万円</td></tr>`
+    ).join('');
+    if (details.length === 0) {
+      rows = '<tr><td colspan="3" style="text-align:center;color:var(--gray-400)">追加控除項目なし</td></tr>';
+    }
+    rows += `
+      <tr class="total"><td>合計還付金（所得税）</td><td>—</td><td>${formatYen(refund)}万円</td></tr>
+    `;
+    if (furusatoResidentTax > 0) {
+      rows += `<tr><td>ふるさと納税（住民税減額分）</td><td>—</td><td>約${formatYen(furusatoResidentTax)}万円</td></tr>`;
+    }
+    document.getElementById('detailBody').innerHTML = rows;
+
+    // Recommendation
+    const rec = document.getElementById('recommendation');
+    let advice = '';
+    if (refund >= 1) {
+      advice = `確定申告をすることで約<strong>${formatYen(refund)}万円</strong>が還付されます。申告のメリットは大きいです。e-Taxなら自宅から簡単に申告できます。`;
+    } else if (refund > 0) {
+      advice = `還付金は約${formatYen(refund)}万円です。金額は小さいですが、e-Taxなら手軽に申告できるため、申告することをおすすめします。`;
+    } else {
+      advice = '現在の控除状況では還付金は発生しません。医療費が年間10万円を超える場合や、ふるさと納税を行った場合は再計算してみてください。';
+    }
+    if (furusatoResidentTax > 0) {
+      advice += `<br>なお、ふるさと納税による住民税の減額分（約${formatYen(furusatoResidentTax)}万円）は翌年の住民税から差し引かれます。`;
+    }
+    rec.innerHTML = `<h4>申告メリット判定</h4><p>${advice}</p>`;
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function calcSalaryDeduction(salary) {
+    if (salary <= 162.5) return 55;
+    if (salary <= 180) return salary * 0.4 - 10;
+    if (salary <= 360) return salary * 0.3 + 8;
+    if (salary <= 660) return salary * 0.2 + 44;
+    if (salary <= 850) return salary * 0.1 + 110;
+    return 195;
+  }
+
+  function calcIncomeTax(taxable) {
+    if (taxable <= 0) return 0;
+    const t = taxable;
+    if (t <= 195) return t * 0.05;
+    if (t <= 330) return 195 * 0.05 + (t - 195) * 0.10;
+    if (t <= 695) return 195 * 0.05 + 135 * 0.10 + (t - 330) * 0.20;
+    if (t <= 900) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + (t - 695) * 0.23;
+    if (t <= 1800) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + (t - 900) * 0.33;
+    if (t <= 4000) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + 900 * 0.33 + (t - 1800) * 0.40;
+    return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + 900 * 0.33 + 2200 * 0.40 + (t - 4000) * 0.45;
+  }
+
+  function getMarginalRate(taxable) {
+    if (taxable <= 195) return 0.05;
+    if (taxable <= 330) return 0.10;
+    if (taxable <= 695) return 0.20;
+    if (taxable <= 900) return 0.23;
+    if (taxable <= 1800) return 0.33;
+    if (taxable <= 4000) return 0.40;
+    return 0.45;
+  }
+
+  function formatYen(v) { return Math.round(v * 10) / 10; }
+  </script>
+
+</body>
+</html>

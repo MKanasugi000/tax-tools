@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フリーランス手取り計算シミュレーター｜所得税・住民税・社保を自動計算【2026年】</title>
+  <meta name="description" content="フリーランス・個人事業主の手取り額を無料で計算。年間売上から所得税・住民税・国民健康保険・国民年金・消費税を差し引いた実際の手取りがわかります。">
+  <meta name="keywords" content="フリーランス 手取り 計算, 個人事業主 税金 シミュレーション, フリーランス 年収 手取り, 個人事業主 手取り">
+  <meta property="og:title" content="フリーランス手取り計算シミュレーター【2026年】">
+  <meta property="og:description" content="年間売上から全ての税金・社会保険料を引いた手取り額を計算。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools.vercel.app/tools/freelance-income/">
+  <link rel="canonical" href="https://tax-tools.vercel.app/tools/freelance-income/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "フリーランス手取り計算シミュレーター",
+    "url": "https://tax-tools.vercel.app/tools/freelance-income/",
+    "description": "フリーランスの手取り額を所得税・住民税・社保込みで計算",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>フリーランス手取り計算シミュレーター</h1>
+      <p>年間売上から所得税・住民税・国民健康保険料・国民年金・消費税を差し引いた、実際の手取り額を計算します。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>›</span>フリーランス手取り計算
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>収入・経費情報を入力</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="revenue">年間売上（万円）</label>
+              <input type="number" id="revenue" placeholder="例: 600" min="0">
+              <div class="hint">税込の年間売上</div>
+            </div>
+            <div class="form-group">
+              <label for="expenses">年間経費（万円）</label>
+              <input type="number" id="expenses" placeholder="例: 150" min="0">
+              <div class="hint">必要経費の合計額</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="filing">申告方法</label>
+              <select id="filing">
+                <option value="blue65">青色申告（65万円控除・e-Tax）</option>
+                <option value="blue55">青色申告（55万円控除）</option>
+                <option value="blue10">青色申告（10万円控除）</option>
+                <option value="white">白色申告</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="dependents">扶養家族数（配偶者除く）</label>
+              <input type="number" id="dependents" value="0" min="0" max="10">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="spouse">配偶者控除</label>
+              <select id="spouse">
+                <option value="0">なし</option>
+                <option value="38">配偶者控除（38万円）</option>
+                <option value="26">配偶者特別控除（26万円）</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="invoiceStatus">消費税の課税状況</label>
+              <select id="invoiceStatus">
+                <option value="exempt">免税事業者</option>
+                <option value="2wari">課税事業者（2割特例）</option>
+                <option value="simplified">課税事業者（簡易課税・第5種）</option>
+                <option value="normal">課税事業者（本則課税）</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" onclick="calculate()">手取り額を計算する</button>
+        </div>
+
+        <div class="results-area" id="results">
+          <div class="result-summary">
+            <h3>年間手取り額（税金・社保差引後）</h3>
+            <div class="amount" id="takeHome"></div>
+            <div class="sub" id="takeHomeSub"></div>
+          </div>
+
+          <div class="breakdown-bar" id="breakdownBar"></div>
+          <div id="breakdownLegend" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px;font-size:0.8rem;"></div>
+
+          <div class="calc-card">
+            <h2>税金・社会保険料の内訳</h2>
+            <table class="result-table">
+              <thead><tr><th>項目</th><th>金額</th></tr></thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+
+          <div class="disclaimer">
+            ※ この計算は目安です。国民健康保険料は自治体により異なります（概算値で計算）。正確な税額は税理士にご相談ください。
+          </div>
+        </div>
+      </section>
+
+      <div class="affiliate-section">
+        <h3>確定申告をもっと簡単にしたい方へ</h3>
+        <p>クラウド会計ソフトなら、日々の記帳から確定申告まで自動化。青色申告65万円控除も簡単に。</p>
+        <div class="affiliate-links">
+          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
+        </div>
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="faq-section" style="padding-left:0;padding-right:0;">
+        <h2>フリーランスの税金FAQ</h2>
+        <details class="faq-item">
+          <summary>フリーランスの手取りは年収の何割ですか？</summary>
+          <div class="faq-answer">経費率や申告方法によりますが、一般的にフリーランスの手取りは売上の60〜75%程度です。青色申告65万円控除を活用し、経費を適切に計上することで手取り率を上げることができます。</div>
+        </details>
+        <details class="faq-item">
+          <summary>個人事業税はいくらからかかりますか？</summary>
+          <div class="faq-answer">個人事業税は事業所得が290万円を超えた場合に課税されます。税率は業種によって3〜5%で、多くの業種（法定業種）は5%です。プログラマーやライターなど、法定業種に該当しない場合は非課税となります。</div>
+        </details>
+        <details class="faq-item">
+          <summary>国民健康保険料はいくらですか？</summary>
+          <div class="faq-answer">国民健康保険料は自治体ごとに税率が異なります。概算で所得の約10%前後が目安です。年間上限額（2026年度は約106万円）があります。40歳以上の方は介護保険分も加算されます。</div>
+        </details>
+      </section>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved. | <a href="/">ホームへ戻る</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function calculate() {
+    const revenue = parseFloat(document.getElementById('revenue').value);
+    const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+    if (!revenue || revenue <= 0) { alert('年間売上を入力してください'); return; }
+
+    const filing = document.getElementById('filing').value;
+    const dependents = parseInt(document.getElementById('dependents').value) || 0;
+    const spouseDeduction = parseFloat(document.getElementById('spouse').value);
+    const invoiceStatus = document.getElementById('invoiceStatus').value;
+
+    // 万円で計算
+    // 青色申告特別控除
+    let blueDeduction = 0;
+    if (filing === 'blue65') blueDeduction = 65;
+    else if (filing === 'blue55') blueDeduction = 55;
+    else if (filing === 'blue10') blueDeduction = 10;
+
+    // 事業所得
+    const businessIncome = Math.max(revenue - expenses - blueDeduction, 0);
+
+    // 社会保険料（概算）
+    // 国民年金：月額16,980円 × 12 = 203,760円 ≈ 20.4万円（2026年度）
+    const nenkin = 20.4;
+    // 国民健康保険：概算（所得 × 約10%、上限106万円）
+    const nhiBasis = Math.max(businessIncome - 43, 0); // 基礎控除43万円
+    const nhiRate = 0.10; // 概算率
+    const nhi = Math.min(nhiBasis * nhiRate, 106);
+
+    const socialInsurance = nenkin + nhi;
+
+    // 所得控除
+    const basicDeduction = 48; // 基礎控除48万円（所得2400万以下）
+    const dependentDeduction = dependents * 38; // 扶養控除（一般）
+    const totalDeduction = basicDeduction + socialInsurance + spouseDeduction + dependentDeduction;
+
+    // 課税所得
+    const taxableIncome = Math.max(businessIncome - totalDeduction, 0);
+
+    // 所得税（累進課税 2026年）
+    const incomeTax = calcIncomeTax(taxableIncome);
+    // 復興特別所得税（2037年まで）
+    const reconstructionTax = incomeTax * 0.021;
+    const totalIncomeTax = incomeTax + reconstructionTax;
+
+    // 住民税（一律10% + 均等割5000円 = 0.5万円）
+    const residentTaxBase = Math.max(businessIncome - totalDeduction + 5, 0); // 住民税の基礎控除は43万円（所得税48万-5万）
+    const residentTax = residentTaxBase * 0.10 + 0.5;
+
+    // 個人事業税（所得290万超 × 5%）
+    const bizTax = Math.max((businessIncome - 290) * 0.05, 0);
+
+    // 消費税
+    let consumptionTax = 0;
+    if (invoiceStatus !== 'exempt') {
+      const salesTax = (revenue / 1.1) * 0.1;
+      if (invoiceStatus === '2wari') {
+        consumptionTax = salesTax * 0.2;
+      } else if (invoiceStatus === 'simplified') {
+        consumptionTax = salesTax * 0.5; // 第5種50%
+      } else {
+        const inputTax = (expenses / 1.1) * 0.1;
+        consumptionTax = Math.max(salesTax - inputTax, 0);
+      }
+    }
+
+    // 手取り
+    const totalTax = totalIncomeTax + residentTax + bizTax + consumptionTax;
+    const totalDeductions = totalTax + socialInsurance;
+    const takeHome = revenue - expenses - totalDeductions;
+
+    // Display
+    document.getElementById('takeHome').textContent = `${formatYen(takeHome)}万円`;
+    document.getElementById('takeHomeSub').textContent = `月平均 約${formatYen(takeHome / 12)}万円 ／ 売上の${Math.round(takeHome / revenue * 100)}%`;
+
+    // Breakdown bar
+    const items = [
+      { label: '手取り', value: takeHome, color: '#10b981' },
+      { label: '経費', value: expenses, color: '#6b7280' },
+      { label: '所得税', value: totalIncomeTax, color: '#3b82f6' },
+      { label: '住民税', value: residentTax, color: '#8b5cf6' },
+      { label: '事業税', value: bizTax, color: '#f59e0b' },
+      { label: '国保', value: nhi, color: '#ef4444' },
+      { label: '年金', value: nenkin, color: '#ec4899' },
+      { label: '消費税', value: consumptionTax, color: '#14b8a6' },
+    ].filter(i => i.value > 0);
+
+    const bar = document.getElementById('breakdownBar');
+    bar.innerHTML = items.map(i => {
+      const pct = (i.value / revenue * 100);
+      return `<div style="width:${pct}%;background:${i.color}">${pct > 5 ? Math.round(pct) + '%' : ''}</div>`;
+    }).join('');
+
+    document.getElementById('breakdownLegend').innerHTML = items.map(i =>
+      `<span style="display:inline-flex;align-items:center;gap:4px"><span style="width:12px;height:12px;border-radius:3px;background:${i.color};display:inline-block"></span>${i.label} ${formatYen(i.value)}万円</span>`
+    ).join('');
+
+    // Detail table
+    document.getElementById('detailBody').innerHTML = `
+      <tr><td>年間売上</td><td>${formatYen(revenue)}万円</td></tr>
+      <tr><td>経費</td><td>-${formatYen(expenses)}万円</td></tr>
+      <tr><td>青色申告特別控除</td><td>-${formatYen(blueDeduction)}万円</td></tr>
+      <tr><td>事業所得</td><td>${formatYen(businessIncome)}万円</td></tr>
+      <tr><td colspan="2" style="background:var(--gray-50);font-weight:600;color:var(--gray-500)">── 税金 ──</td></tr>
+      <tr><td>所得税（復興税含む）</td><td>-${formatYen(totalIncomeTax)}万円</td></tr>
+      <tr><td>住民税</td><td>-${formatYen(residentTax)}万円</td></tr>
+      <tr><td>個人事業税</td><td>-${formatYen(bizTax)}万円</td></tr>
+      <tr><td>消費税</td><td>-${formatYen(consumptionTax)}万円</td></tr>
+      <tr><td colspan="2" style="background:var(--gray-50);font-weight:600;color:var(--gray-500)">── 社会保険料 ──</td></tr>
+      <tr><td>国民健康保険</td><td>-${formatYen(nhi)}万円</td></tr>
+      <tr><td>国民年金</td><td>-${formatYen(nenkin)}万円</td></tr>
+      <tr class="total"><td>年間手取り額</td><td>${formatYen(takeHome)}万円</td></tr>
+    `;
+
+    // Recommendations
+    const rec = document.getElementById('recommendation');
+    let tips = [];
+    if (filing === 'white') tips.push('青色申告（65万円控除）に切り替えると、所得税・住民税が約' + formatYen((65 * 0.2 + 65 * 0.1)) + '万円程度安くなる可能性があります。');
+    if (filing === 'blue55') tips.push('e-Taxで申告すれば65万円控除に。追加で約' + formatYen(10 * 0.3) + '万円の節税効果。');
+    if (invoiceStatus === 'exempt' && revenue > 1000) tips.push('売上1,000万円超のため、翌々年から消費税の課税事業者となります。');
+    if (dependents === 0 && spouseDeduction === 0) tips.push('iDeCoや小規模企業共済に加入すると、掛金全額が所得控除になり節税効果が大きいです。');
+    if (tips.length === 0) tips.push('現在の申告方法で適切に節税されています。');
+    rec.innerHTML = `<h4>節税アドバイス</h4><p>${tips.join('<br>')}</p>`;
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // 2026年（2025年所得分と同じ想定）所得税率
+  function calcIncomeTax(taxable) {
+    // 万円単位
+    if (taxable <= 0) return 0;
+    const t = taxable;
+    if (t <= 195) return t * 0.05;
+    if (t <= 330) return 195 * 0.05 + (t - 195) * 0.10;
+    if (t <= 695) return 195 * 0.05 + 135 * 0.10 + (t - 330) * 0.20;
+    if (t <= 900) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + (t - 695) * 0.23;
+    if (t <= 1800) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + (t - 900) * 0.33;
+    if (t <= 4000) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + 900 * 0.33 + (t - 1800) * 0.40;
+    return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + 900 * 0.33 + 2200 * 0.40 + (t - 4000) * 0.45;
+  }
+
+  function formatYen(v) { return Math.round(v * 10) / 10; }
+  </script>
+
+</body>
+</html>

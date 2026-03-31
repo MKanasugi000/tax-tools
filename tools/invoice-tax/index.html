@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>インボイス制度 税額シミュレーター｜2割特例・3割特例対応【2026年最新】</title>
+  <meta name="description" content="インボイス制度の消費税額を無料シミュレーション。2割特例・本則課税・簡易課税を比較して最も有利な方式がわかります。2026年10月の3割特例にも対応。">
+  <meta name="keywords" content="インボイス制度 シミュレーター, 消費税 計算, 2割特例 計算, 3割特例, インボイス 消費税 いくら">
+  <meta property="og:title" content="インボイス制度 税額シミュレーター【2026年最新】">
+  <meta property="og:description" content="2割特例・本則課税・簡易課税を比較。2026年10月の3割特例にも対応。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools.vercel.app/tools/invoice-tax/">
+  <link rel="canonical" href="https://tax-tools.vercel.app/tools/invoice-tax/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "インボイス制度 税額シミュレーター",
+    "url": "https://tax-tools.vercel.app/tools/invoice-tax/",
+    "description": "インボイス制度の消費税額を2割特例・本則課税・簡易課税で比較計算",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "インボイスの2割特例はいつまで使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2割特例は2026年9月30日を含む課税期間まで適用されます。個人事業主の場合、2026年分（2026年1月〜12月）の申告が最後です。2026年10月以降は3割特例に移行します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2割特例と簡易課税はどちらが得ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "多くの場合、2割特例の方が有利です。ただし、第1種事業（卸売業・みなし仕入率90%）や第2種事業（小売業・みなし仕入率80%）の場合は簡易課税の方が納税額が少なくなることがあります。本ツールで比較計算できます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>インボイス制度 税額シミュレーター</h1>
+      <p>2割特例・本則課税・簡易課税を比較して、最も有利な課税方式を判定します。2026年10月以降の3割特例にも対応。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>›</span>インボイス制度 税額シミュレーター
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>売上・経費情報を入力</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="revenue">年間売上（税込・万円）</label>
+              <input type="number" id="revenue" placeholder="例: 500" min="0" step="1">
+              <div class="hint">消費税込みの年間売上を入力</div>
+            </div>
+            <div class="form-group">
+              <label for="expenseRate">経費率（%）</label>
+              <input type="number" id="expenseRate" placeholder="例: 30" min="0" max="100" step="1" value="30">
+              <div class="hint">売上に対する経費の割合</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="industry">業種（簡易課税のみなし仕入率）</label>
+              <select id="industry">
+                <option value="90">第1種：卸売業（90%）</option>
+                <option value="80">第2種：小売業（80%）</option>
+                <option value="70">第3種：製造業等（70%）</option>
+                <option value="60">第4種：飲食店等（60%）</option>
+                <option value="50" selected>第5種：サービス業等（50%）</option>
+                <option value="40">第6種：不動産業（40%）</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="period">計算期間</label>
+              <select id="period">
+                <option value="before">2026年9月まで（2割特例）</option>
+                <option value="after">2026年10月以降（3割特例）</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" onclick="calculate()">消費税額を計算する</button>
+        </div>
+
+        <div class="results-area" id="results">
+          <div class="comparison-grid" id="comparisonGrid"></div>
+
+          <div class="calc-card">
+            <h2>課税方式別 詳細比較</h2>
+            <table class="result-table" id="detailTable">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th id="colSpecial">2割特例</th>
+                  <th>本則課税</th>
+                  <th>簡易課税</th>
+                </tr>
+              </thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+
+          <div class="disclaimer">
+            ※ この計算は目安です。正確な税額は税理士にご相談ください。2割特例は免税事業者からインボイス発行事業者になった場合に適用されます。簡易課税は事前届出が必要です。
+          </div>
+        </div>
+      </section>
+
+      <div class="affiliate-section">
+        <h3>インボイス対応の会計ソフトで確定申告をラクに</h3>
+        <p>インボイス制度に完全対応。請求書の発行から消費税の申告まで自動化できます。</p>
+        <div class="affiliate-links">
+          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
+          <a href="#affiliate-yayoi" class="affiliate-btn">やよいの青色申告オンライン →</a>
+        </div>
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="faq-section" style="padding-left:0;padding-right:0;">
+        <h2>インボイス制度 よくある質問</h2>
+        <details class="faq-item">
+          <summary>2割特例はいつまで使えますか？</summary>
+          <div class="faq-answer">2割特例は2026年9月30日を含む課税期間まで適用されます。個人事業主の場合、2026年分（2026年1月〜12月）の確定申告が最後の適用です。2026年10月以降は経過措置として3割特例に移行する予定です。届出不要で確定申告時に選択可能です。</div>
+        </details>
+        <details class="faq-item">
+          <summary>2割特例と簡易課税はどちらが得ですか？</summary>
+          <div class="faq-answer">多くのサービス業（第5種・みなし仕入率50%）やその他の業種では2割特例が有利です。ただし卸売業（第1種・90%）や小売業（第2種・80%）など、みなし仕入率が高い業種では簡易課税の方が納税額が少なくなることがあります。上のシミュレーターで比較してください。</div>
+        </details>
+        <details class="faq-item">
+          <summary>免税事業者のままでいるとどうなりますか？</summary>
+          <div class="faq-answer">免税事業者はインボイスを発行できないため、取引先（課税事業者）が仕入税額控除を受けられません。経過措置として2026年9月まで仕入税額の80%、2029年9月まで50%が控除可能ですが、それ以降は全額控除不可となります。BtoC取引が中心の場合は免税事業者のままでも影響は少ないです。</div>
+        </details>
+      </section>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved. | <a href="/">ホームへ戻る</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function calculate() {
+    const revenue = parseFloat(document.getElementById('revenue').value);
+    if (!revenue || revenue <= 0) { alert('年間売上を入力してください'); return; }
+
+    const expenseRate = parseFloat(document.getElementById('expenseRate').value) / 100;
+    const deemed = parseFloat(document.getElementById('industry').value) / 100;
+    const period = document.getElementById('period').value;
+
+    // 税込売上 → 税抜売上と消費税
+    const revenueExTax = revenue / 1.1;          // 万円
+    const salesTax = revenueExTax * 0.1;          // 売上にかかる消費税
+    const expenses = revenue * expenseRate;       // 税込経費
+    const expensesExTax = expenses / 1.1;
+    const inputTax = expensesExTax * 0.1;         // 仕入にかかる消費税
+
+    // 2割特例 or 3割特例
+    const specialRate = period === 'before' ? 0.2 : 0.3;
+    const specialLabel = period === 'before' ? '2割特例' : '3割特例';
+    const specialTax = salesTax * specialRate;
+
+    // 本則課税
+    const normalTax = Math.max(salesTax - inputTax, 0);
+
+    // 簡易課税
+    const simpleTax = salesTax * (1 - deemed);
+
+    // 最も有利な方式
+    const taxes = [
+      { name: specialLabel, amount: specialTax },
+      { name: '本則課税', amount: normalTax },
+      { name: '簡易課税', amount: simpleTax }
+    ];
+    taxes.sort((a, b) => a.amount - b.amount);
+    const best = taxes[0];
+
+    // Comparison cards
+    const grid = document.getElementById('comparisonGrid');
+    grid.innerHTML = [
+      { name: specialLabel, amount: specialTax },
+      { name: '本則課税', amount: normalTax },
+      { name: '簡易課税', amount: simpleTax }
+    ].map(t => {
+      const isBest = t.name === best.name;
+      const diff = t.amount - best.amount;
+      return `<div class="comparison-card${isBest ? ' recommended' : ''}">
+        <h4>${t.name}</h4>
+        <div class="tax-amount">${formatYen(t.amount)}万円</div>
+        ${!isBest ? `<div class="diff diff-negative">+${formatYen(diff)}万円</div>` : '<div class="diff diff-positive">最安</div>'}
+      </div>`;
+    }).join('');
+
+    // Detail table
+    document.getElementById('colSpecial').textContent = specialLabel;
+    const body = document.getElementById('detailBody');
+    body.innerHTML = `
+      <tr><td>売上（税抜）</td><td>${formatYen(revenueExTax)}万円</td><td>${formatYen(revenueExTax)}万円</td><td>${formatYen(revenueExTax)}万円</td></tr>
+      <tr><td>売上消費税</td><td>${formatYen(salesTax)}万円</td><td>${formatYen(salesTax)}万円</td><td>${formatYen(salesTax)}万円</td></tr>
+      <tr><td>控除税額</td><td>${formatYen(salesTax * (1 - specialRate))}万円</td><td>${formatYen(inputTax)}万円</td><td>${formatYen(salesTax * deemed)}万円</td></tr>
+      <tr class="total"><td>納税額</td><td>${formatYen(specialTax)}万円</td><td>${formatYen(normalTax)}万円</td><td>${formatYen(simpleTax)}万円</td></tr>
+      <tr><td>手取り差額（最安比）</td>
+        <td>${specialTax === best.amount ? '—' : '-' + formatYen(specialTax - best.amount) + '万円'}</td>
+        <td>${normalTax === best.amount ? '—' : '-' + formatYen(normalTax - best.amount) + '万円'}</td>
+        <td>${simpleTax === best.amount ? '—' : '-' + formatYen(simpleTax - best.amount) + '万円'}</td>
+      </tr>`;
+
+    // Recommendation
+    const rec = document.getElementById('recommendation');
+    let advice = '';
+    if (best.name === specialLabel) {
+      advice = period === 'before'
+        ? `<strong>${specialLabel}</strong>が最も有利です（納税額 ${formatYen(best.amount)}万円）。届出不要で確定申告時に選択できます。2026年10月以降は3割特例に移行するため、将来的には簡易課税への切替も検討してください。`
+        : `<strong>${specialLabel}</strong>が最も有利です（納税額 ${formatYen(best.amount)}万円）。届出不要で確定申告時に選択できます。`;
+    } else if (best.name === '簡易課税') {
+      advice = `<strong>簡易課税</strong>が最も有利です（納税額 ${formatYen(best.amount)}万円）。選択するには前年末までに「簡易課税制度選択届出書」の提出が必要です。`;
+    } else {
+      advice = `<strong>本則課税</strong>が最も有利です（納税額 ${formatYen(best.amount)}万円）。経費率が高いため、実際の仕入税額控除が大きくなります。ただし帳簿の記帳負担が大きいため、会計ソフトの利用をおすすめします。`;
+    }
+    rec.innerHTML = `<h4>おすすめの課税方式</h4><p>${advice}</p>`;
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function formatYen(v) {
+    return Math.round(v * 10) / 10;
+  }
+  </script>
+
+</body>
+</html>

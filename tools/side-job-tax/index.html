@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>副業バレ防止 住民税計算ツール｜副業が会社にバレるリスクを判定【2026年】</title>
+  <meta name="description" content="副業が会社にバレるリスクを無料で判定。住民税の納付方法別シミュレーションと、バレない確定申告の方法を解説。普通徴収への切替手順も。">
+  <meta name="keywords" content="副業 住民税 バレる, 副業 確定申告 計算, 副業 税金 シミュレーション, 副業 バレない 方法">
+  <meta property="og:title" content="副業バレ防止 住民税計算ツール【2026年】">
+  <meta property="og:description" content="副業が会社にバレるリスクを判定。住民税の仕組みと対策を解説。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools.vercel.app/tools/side-job-tax/">
+  <link rel="canonical" href="https://tax-tools.vercel.app/tools/side-job-tax/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "副業バレ防止 住民税計算ツール",
+    "url": "https://tax-tools.vercel.app/tools/side-job-tax/",
+    "description": "副業が会社にバレるリスクを判定し、住民税の納付方法を比較",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "副業が会社にバレる原因は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最も多い原因は住民税です。副業所得を合算した住民税額が本業の給与に対して高くなると、会社の経理担当者が不審に思う場合があります。住民税を普通徴収（自分で納付）に切り替えることで、副業分の住民税が会社に通知されなくなります。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>副業バレ防止 住民税計算ツール</h1>
+      <p>副業が会社にバレるリスクを判定。住民税の正しい納付方法と対策手順をシミュレーション。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>›</span>副業バレ防止 住民税計算
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>本業・副業の情報を入力</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mainSalary">本業の年収（万円）</label>
+              <input type="number" id="mainSalary" placeholder="例: 450" min="0">
+              <div class="hint">額面年収（税込）</div>
+            </div>
+            <div class="form-group">
+              <label for="sideIncome">副業の年間収入（万円）</label>
+              <input type="number" id="sideIncome" placeholder="例: 100" min="0">
+              <div class="hint">副業の総収入</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sideExpenses">副業の経費（万円）</label>
+              <input type="number" id="sideExpenses" placeholder="例: 20" min="0" value="0">
+              <div class="hint">副業にかかった経費</div>
+            </div>
+            <div class="form-group">
+              <label for="sideType">副業の所得種類</label>
+              <select id="sideType">
+                <option value="business">事業所得（開業届あり）</option>
+                <option value="miscellaneous" selected>雑所得（開業届なし）</option>
+                <option value="salary">給与所得（アルバイト等）</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="collection">住民税の納付方法</label>
+            <select id="collection">
+              <option value="special">特別徴収（会社の給与から天引き）— 現在の状態</option>
+              <option value="ordinary">普通徴収（自分で納付）— バレ防止</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" onclick="calculate()">バレるリスクを判定する</button>
+        </div>
+
+        <div class="results-area" id="results">
+          <div class="result-summary" id="riskSummary"></div>
+
+          <div class="calc-card">
+            <h2>住民税の内訳</h2>
+            <table class="result-table">
+              <thead><tr><th>項目</th><th>特別徴収の場合</th><th>普通徴収の場合</th></tr></thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <div class="calc-card" id="stepsCard">
+            <h2>普通徴収への切替手順</h2>
+            <div id="steps" style="font-size:0.9rem;color:var(--gray-600);line-height:1.8;"></div>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+
+          <div class="disclaimer">
+            ※ この計算は目安です。住民税の普通徴収への切替可否は自治体によって異なります。事前に市区町村の税務課にご確認ください。副業が給与所得の場合、原則として普通徴収への切替はできません。
+          </div>
+        </div>
+      </section>
+
+      <div class="affiliate-section">
+        <h3>副業の確定申告をラクにしたい方へ</h3>
+        <p>クラウド会計ソフトなら、副業の経費管理から確定申告書の作成まで自動化できます。</p>
+        <div class="affiliate-links">
+          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
+        </div>
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="faq-section" style="padding-left:0;padding-right:0;">
+        <h2>副業の税金FAQ</h2>
+        <details class="faq-item">
+          <summary>副業が20万円以下なら確定申告は不要ですか？</summary>
+          <div class="faq-answer">所得税に関しては、給与所得者の副業所得（雑所得・事業所得）が年間20万円以下であれば確定申告は不要です。ただし、住民税の申告は金額に関わらず必要です。住民税の申告をしないと、バレる原因になることもあります。</div>
+        </details>
+        <details class="faq-item">
+          <summary>副業が給与所得（アルバイト）の場合はバレますか？</summary>
+          <div class="faq-answer">給与所得は原則として普通徴収に切り替えることができません。2か所以上の給与がある場合、住民税は合算されて本業の会社に通知されるため、バレるリスクが高くなります。副業が給与所得の場合は、会社の副業規定を確認することをおすすめします。</div>
+        </details>
+        <details class="faq-item">
+          <summary>住民税の普通徴収はどう申請しますか？</summary>
+          <div class="faq-answer">確定申告書第二表の「住民税に関する事項」欄で「自分で納付（普通徴収）」にチェックを入れます。これにより副業分の住民税が自宅に届く納付書で納付する形になり、会社に通知されません。ただし、自治体によっては対応していない場合があります。</div>
+        </details>
+      </section>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved. | <a href="/">ホームへ戻る</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function calculate() {
+    const mainSalary = parseFloat(document.getElementById('mainSalary').value);
+    const sideIncome = parseFloat(document.getElementById('sideIncome').value);
+    const sideExpenses = parseFloat(document.getElementById('sideExpenses').value) || 0;
+    const sideType = document.getElementById('sideType').value;
+    const collection = document.getElementById('collection').value;
+
+    if (!mainSalary || !sideIncome) { alert('本業年収と副業収入を入力してください'); return; }
+
+    // 給与所得控除（2026年）
+    const salaryDeduction = calcSalaryDeduction(mainSalary);
+    const mainIncome = mainSalary - salaryDeduction;
+
+    // 副業所得
+    let sideProfit = 0;
+    if (sideType === 'salary') {
+      const sideDeduction = calcSalaryDeduction(sideIncome);
+      sideProfit = Math.max(sideIncome - sideDeduction, 0);
+    } else {
+      sideProfit = Math.max(sideIncome - sideExpenses, 0);
+    }
+
+    // 住民税計算（10%一律）
+    const basicDeduction = 43; // 住民税の基礎控除43万
+    const socialIns = mainSalary * 0.15; // 概算社会保険料15%
+
+    // 本業のみの住民税
+    const mainTaxableForResident = Math.max(mainIncome - basicDeduction - socialIns, 0);
+    const mainResidentTax = mainTaxableForResident * 0.10 + 0.5;
+
+    // 本業+副業の住民税
+    const totalIncome = mainIncome + sideProfit;
+    const totalTaxableForResident = Math.max(totalIncome - basicDeduction - socialIns, 0);
+    const totalResidentTax = totalTaxableForResident * 0.10 + 0.5;
+
+    // 副業分の住民税
+    const sideResidentTax = totalResidentTax - mainResidentTax;
+
+    // 副業の所得税（概算・超過分の税率）
+    const mainTaxable = Math.max(mainIncome - 48 - socialIns, 0); // 所得税の基礎控除48万
+    const marginalRate = getMarginalRate(mainTaxable);
+    const sideIncomeTax = sideProfit * marginalRate;
+
+    // リスク判定
+    let riskLevel, riskText, riskClass;
+    if (sideType === 'salary') {
+      riskLevel = '高';
+      riskClass = 'risk-high';
+      riskText = '給与所得は普通徴収に切替できないため、バレるリスクが高いです';
+    } else if (collection === 'special') {
+      if (sideProfit > 50) {
+        riskLevel = '高';
+        riskClass = 'risk-high';
+        riskText = `特別徴収のままだと、住民税が約${formatYen(sideResidentTax)}万円増えるため会社にバレる可能性が高いです`;
+      } else if (sideProfit > 20) {
+        riskLevel = '中';
+        riskClass = 'risk-medium';
+        riskText = '住民税の増加が目立つ可能性があります。普通徴収への切替をおすすめします';
+      } else {
+        riskLevel = '低';
+        riskClass = 'risk-low';
+        riskText = '住民税の増加は小さいですが、念のため普通徴収への切替をおすすめします';
+      }
+    } else {
+      if (sideType === 'salary') {
+        riskLevel = '高';
+        riskClass = 'risk-high';
+        riskText = '給与所得は原則として普通徴収に切替できません';
+      } else {
+        riskLevel = '低';
+        riskClass = 'risk-low';
+        riskText = '普通徴収を選択すれば、副業分の住民税は自分で納付するためバレにくくなります';
+      }
+    }
+
+    // Display
+    document.getElementById('riskSummary').innerHTML = `
+      <h3>バレるリスク判定</h3>
+      <div style="display:flex;align-items:center;gap:16px;margin:12px 0">
+        <span class="risk-badge ${riskClass}">リスク: ${riskLevel}</span>
+      </div>
+      <div class="sub">${riskText}</div>
+      <div style="margin-top:16px;font-size:0.9rem;opacity:0.9">
+        副業分の住民税: <strong>${formatYen(sideResidentTax)}万円/年</strong>（月額 約${formatYen(sideResidentTax / 12)}万円の増加）
+      </div>
+    `;
+
+    document.getElementById('detailBody').innerHTML = `
+      <tr><td>本業の住民税</td><td>${formatYen(mainResidentTax)}万円</td><td>${formatYen(mainResidentTax)}万円</td></tr>
+      <tr><td>副業分の住民税</td><td>${formatYen(sideResidentTax)}万円 <span style="color:var(--red);font-size:0.8rem">← 会社に通知</span></td><td>${formatYen(sideResidentTax)}万円 <span style="color:var(--green);font-size:0.8rem">← 自分で納付</span></td></tr>
+      <tr><td>会社に届く住民税額</td><td><strong>${formatYen(totalResidentTax)}万円</strong></td><td><strong>${formatYen(mainResidentTax)}万円</strong></td></tr>
+      <tr><td>通常との差額</td><td class="diff-negative">+${formatYen(sideResidentTax)}万円</td><td>±0万円</td></tr>
+      <tr class="total"><td>副業にかかる税金合計</td><td colspan="2">${formatYen(sideIncomeTax + sideResidentTax)}万円（所得税${formatYen(sideIncomeTax)}万 + 住民税${formatYen(sideResidentTax)}万）</td></tr>
+    `;
+
+    // Steps
+    const steps = document.getElementById('steps');
+    if (sideType === 'salary') {
+      steps.innerHTML = `
+        <p style="color:var(--red);font-weight:600;">給与所得の場合、原則として普通徴収への切替はできません。</p>
+        <p>対策として以下を検討してください：</p>
+        <ol style="padding-left:20px;margin-top:8px;">
+          <li>会社の副業規定を確認し、許可を得る</li>
+          <li>副業を業務委託（事業所得/雑所得）の形態に変更できないか検討する</li>
+          <li>市区町村の税務課に個別に相談する（対応してくれる場合もあります）</li>
+        </ol>
+      `;
+    } else {
+      steps.innerHTML = `
+        <ol style="padding-left:20px;">
+          <li><strong>確定申告書を作成</strong> — 副業の所得を「雑所得」または「事業所得」として申告</li>
+          <li><strong>第二表の「住民税に関する事項」</strong> — 「給与、公的年金等以外の所得に係る住民税の徴収方法」欄で<strong>「自分で納付」</strong>にチェック</li>
+          <li><strong>確定申告を提出</strong>（e-Tax推奨）</li>
+          <li><strong>6月頃に届く納付書</strong>で副業分の住民税を自分で納付</li>
+          <li>念のため、お住まいの市区町村の税務課に電話し「副業分を普通徴収にしたい」と伝えると確実です</li>
+        </ol>
+        <p style="margin-top:12px;color:var(--gray-500);">※ 自治体によっては普通徴収に対応していない場合があります。必ず事前に確認してください。</p>
+      `;
+    }
+
+    // Recommendation
+    const rec = document.getElementById('recommendation');
+    let advice = '';
+    if (sideProfit > 0 && sideProfit <= 20 && sideType !== 'salary') {
+      advice = `副業所得が20万円以下のため、所得税の確定申告は不要です。ただし、住民税の申告は必要です。市区町村の窓口で住民税の申告を行い、普通徴収を選択してください。`;
+    } else if (sideType === 'business') {
+      advice = `事業所得として申告する場合、青色申告（開業届＋青色申告承認申請書の提出が必要）にすれば最大65万円の特別控除が受けられます。経費もしっかり計上しましょう。`;
+    } else {
+      advice = `副業所得${formatYen(sideProfit)}万円に対して、税金は合計約${formatYen(sideIncomeTax + sideResidentTax)}万円です。手取りは約${formatYen(sideProfit - sideIncomeTax - sideResidentTax)}万円となります。`;
+    }
+    rec.innerHTML = `<h4>アドバイス</h4><p>${advice}</p>`;
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // 給与所得控除（2026年）
+  function calcSalaryDeduction(salary) {
+    if (salary <= 162.5) return 55;
+    if (salary <= 180) return salary * 0.4 - 10;
+    if (salary <= 360) return salary * 0.3 + 8;
+    if (salary <= 660) return salary * 0.2 + 44;
+    if (salary <= 850) return salary * 0.1 + 110;
+    return 195; // 上限195万円
+  }
+
+  function getMarginalRate(taxable) {
+    if (taxable <= 195) return 0.05;
+    if (taxable <= 330) return 0.10;
+    if (taxable <= 695) return 0.20;
+    if (taxable <= 900) return 0.23;
+    if (taxable <= 1800) return 0.33;
+    if (taxable <= 4000) return 0.40;
+    return 0.45;
+  }
+
+  function formatYen(v) { return Math.round(v * 10) / 10; }
+  </script>
+
+</body>
+</html>

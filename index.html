@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>税金シミュレーター — フリーランス・個人事業主の税金計算ツール</title>
+  <meta name="description" content="確定申告・インボイス制度の税額を無料で計算。フリーランス・個人事業主向けの税金シミュレーションツール5選。所得税・住民税・消費税・還付金をかんたん計算。">
+  <meta name="keywords" content="税金 シミュレーター, 確定申告 計算, インボイス制度 シミュレーション, フリーランス 税金, 個人事業主 税金計算">
+  <meta property="og:title" content="税金シミュレーター — フリーランス・個人事業主の税金計算ツール">
+  <meta property="og:description" content="確定申告・インボイス制度の税額を無料で計算。5つの無料税金計算ツール。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools.vercel.app/">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="canonical" href="https://tax-tools.vercel.app/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "税金シミュレーター",
+    "url": "https://tax-tools.vercel.app/",
+    "description": "フリーランス・個人事業主向けの税金計算ツール集",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tax-tools.vercel.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "インボイス制度の2割特例とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2割特例は、免税事業者からインボイス発行事業者になった方が利用できる経過措置です。消費税の納税額を売上税額の2割に軽減できます。2026年9月末までの申告に適用され、2026年10月以降は3割特例（売上税額の3割）に変更されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "フリーランスが払う税金の種類は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "フリーランス（個人事業主）が支払う主な税金は、所得税、住民税、個人事業税、消費税（課税事業者の場合）です。加えて国民健康保険料と国民年金保険料の社会保険料も必要です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "確定申告で還付金が出るのはどんな場合ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "源泉徴収された税額が、実際に計算した所得税額を上回る場合に還付金が発生します。医療費控除、ふるさと納税、住宅ローン控除などの各種控除を適用することで、還付金が増えることがあります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "副業の税金はどうすればバレない？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "副業の住民税を「普通徴収（自分で納付）」に切り替えることで、本業の会社に副業分の住民税が通知されなくなります。確定申告書の「住民税の徴収方法」欄で「自分で納付」を選択してください。ただし、自治体によっては対応が異なる場合があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "青色申告と白色申告の違いは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "青色申告は最大65万円（e-Taxの場合）の特別控除が受けられ、赤字の繰越控除（3年間）や家族への給与の経費計上が可能です。白色申告は帳簿付けが簡単ですが、特別控除はありません。節税効果を考えると青色申告が有利です。"
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>確定申告・インボイス制度の税額を<br>無料で計算</h1>
+      <p>フリーランス・個人事業主のための税金シミュレーションツール。2026年最新の税率に対応。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <!-- Ad Slot 1 -->
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <div class="tools-grid">
+
+        <a href="/tools/invoice-tax/" class="tool-card">
+          <div class="icon">&#x1F4CB;</div>
+          <h3>インボイス制度 税額シミュレーター</h3>
+          <p>2割特例・本則課税・簡易課税を比較。2026年10月の3割特例にも対応。最も有利な課税方式がわかります。</p>
+          <span class="badge">2026年最新</span>
+        </a>
+
+        <a href="/tools/freelance-income/" class="tool-card">
+          <div class="icon">&#x1F4B0;</div>
+          <h3>フリーランス手取り計算シミュレーター</h3>
+          <p>年間売上から所得税・住民税・社会保険料を差し引いた実際の手取り額を計算。青色・白色申告に対応。</p>
+          <span class="badge">所得税+住民税+社保</span>
+        </a>
+
+        <a href="/tools/side-job-tax/" class="tool-card">
+          <div class="icon">&#x1F575;</div>
+          <h3>副業バレ防止 住民税計算ツール</h3>
+          <p>副業が会社にバレるリスクを判定。住民税の納付方法別のシミュレーションと対策手順を解説。</p>
+          <span class="badge">バレ防止対策</span>
+        </a>
+
+        <a href="/tools/refund-calculator/" class="tool-card">
+          <div class="icon">&#x1F4B8;</div>
+          <h3>確定申告 還付金シミュレーター</h3>
+          <p>医療費控除・ふるさと納税・住宅ローン控除で還付される金額を計算。申告するメリットを判定。</p>
+          <span class="badge">還付金チェック</span>
+        </a>
+
+        <a href="/tools/consumption-tax/" class="tool-card">
+          <div class="icon">&#x1F4CA;</div>
+          <h3>消費税 簡易課税 計算ツール</h3>
+          <p>本則課税と簡易課税の納税額を比較。業種別のみなし仕入率で、どちらが得か一目でわかります。</p>
+          <span class="badge">6業種対応</span>
+        </a>
+
+      </div>
+
+      <!-- Ad Slot 2 -->
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <!-- Affiliate Section -->
+      <div class="affiliate-section">
+        <h3>確定申告をもっと簡単にしたい方へ</h3>
+        <p>クラウド会計ソフトなら、日々の記帳から確定申告まで自動化。インボイス制度にも完全対応。</p>
+        <div class="affiliate-links">
+          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
+          <a href="#affiliate-yayoi" class="affiliate-btn">やよいの青色申告オンライン →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <h2>よくある質問（税金・確定申告FAQ）</h2>
+
+        <details class="faq-item">
+          <summary>インボイス制度の2割特例とは何ですか？</summary>
+          <div class="faq-answer">
+            2割特例は、免税事業者からインボイス発行事業者になった方が利用できる経過措置です。消費税の納税額を売上税額の2割に軽減できます。2026年9月末までの申告に適用され、2026年10月以降は3割特例（売上税額の3割）に変更される予定です。届出不要で確定申告時に選択可能です。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>フリーランスが払う税金の種類は？</summary>
+          <div class="faq-answer">
+            フリーランス（個人事業主）が支払う主な税金は、所得税、住民税、個人事業税（所得290万円超の場合）、消費税（課税事業者の場合）です。加えて国民健康保険料と国民年金保険料の社会保険料も必要です。青色申告の特別控除（最大65万円）を活用することで、大幅に節税できます。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>確定申告で還付金が出るのはどんな場合ですか？</summary>
+          <div class="faq-answer">
+            源泉徴収された税額が、実際に計算した所得税額を上回る場合に還付金が発生します。医療費控除（年間10万円超の医療費）、ふるさと納税の寄附金控除、住宅ローン控除（初年度）、雑損控除などの各種控除を適用することで、還付金が増えることがあります。特に年末調整を受けていない人や、年度途中で退職した人は還付の可能性が高いです。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>副業の税金はどうすれば会社にバレない？</summary>
+          <div class="faq-answer">
+            副業の住民税を「普通徴収（自分で納付）」に切り替えることで、本業の会社に副業分の住民税が通知されなくなります。確定申告書の「住民税の徴収方法」欄で「自分で納付」を選択してください。ただし、自治体によっては普通徴収に対応していない場合や、給与所得は特別徴収に統一される場合があるため、事前に市区町村の税務課に確認することをおすすめします。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>青色申告と白色申告の違いは？</summary>
+          <div class="faq-answer">
+            青色申告は最大65万円（e-Tax＋複式簿記の場合）の特別控除が受けられ、赤字の繰越控除（3年間）や家族への給与（専従者給与）の経費計上が可能です。白色申告は帳簿付けが簡単ですが、特別控除はありません。節税効果を考えると青色申告が圧倒的に有利で、クラウド会計ソフトを使えば複式簿記も自動化できます。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>消費税の簡易課税制度とは？</summary>
+          <div class="faq-answer">
+            簡易課税制度は、基準期間の課税売上高が5,000万円以下の事業者が選択できる消費税の計算方法です。実際の仕入税額の代わりに、売上税額に業種ごとの「みなし仕入率」（40%〜90%）を掛けて計算します。経費（仕入）が少ない業種では本則課税より有利になることが多いです。選択するには「簡易課税制度選択届出書」の事前提出が必要です。
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Ad Slot 3 -->
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <div class="disclaimer">
+        ※ 本サイトの計算結果は概算であり、正確な税額を保証するものではありません。実際の申告にあたっては、税理士や最寄りの税務署にご相談ください。税制は改正されることがあるため、最新の情報は国税庁のウェブサイトをご確認ください。
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>税金シミュレーター</h4>
+          <p>フリーランス・個人事業主のための無料税金計算ツール集。2026年最新の税率に完全対応。</p>
+        </div>
+        <div class="footer-links">
+          <h5>計算ツール</h5>
+          <ul>
+            <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
+            <li><a href="/tools/freelance-income/">手取り計算</a></li>
+            <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="/tools/refund-calculator/">還付金計算</a></li>
+            <li><a href="/tools/consumption-tax/">消費税計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved. | 本サイトの計算は目安です。正確な税額は税理士にご相談ください。
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

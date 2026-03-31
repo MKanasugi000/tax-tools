@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>消費税 簡易課税 計算ツール｜本則課税vs簡易課税 どちらが得か判定【2026年】</title>
+  <meta name="description" content="消費税の本則課税と簡易課税の納税額を比較計算。6業種のみなし仕入率に対応。どちらが得かを一目で判定するシミュレーター。">
+  <meta name="keywords" content="簡易課税 計算, 消費税 シミュレーター, みなし仕入率, 本則課税 簡易課税 比較, 消費税 どちらが得">
+  <meta property="og:title" content="消費税 簡易課税 計算ツール【2026年】">
+  <meta property="og:description" content="本則課税vs簡易課税の納税額を比較。6業種のみなし仕入率対応。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools.vercel.app/tools/consumption-tax/">
+  <link rel="canonical" href="https://tax-tools.vercel.app/tools/consumption-tax/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "消費税 簡易課税 計算ツール",
+    "url": "https://tax-tools.vercel.app/tools/consumption-tax/",
+    "description": "消費税の本則課税と簡易課税の納税額を比較計算",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "簡易課税制度を選択する条件は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "基準期間（個人は前々年）の課税売上高が5,000万円以下の事業者が選択できます。適用を受けるには、適用したい課税期間の前日までに「消費税簡易課税制度選択届出書」を税務署に提出する必要があります。一度選択すると2年間は変更できません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "みなし仕入率とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "みなし仕入率は、簡易課税制度で使用する業種別の仕入割合です。第1種（卸売業）90%、第2種（小売業）80%、第3種（製造業等）70%、第4種（飲食店等）60%、第5種（サービス業等）50%、第6種（不動産業）40%です。実際の仕入額に関わらず、この率で消費税を計算します。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>消費税 簡易課税 計算ツール</h1>
+      <p>本則課税と簡易課税の納税額を比較。業種別のみなし仕入率で、どちらが得か一目でわかります。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>›</span>消費税 簡易課税 計算ツール
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>事業情報を入力</h2>
+          <div class="form-group">
+            <label for="industry">業種（みなし仕入率）</label>
+            <select id="industry">
+              <option value="90">第1種事業：卸売業（みなし仕入率 90%）</option>
+              <option value="80">第2種事業：小売業・農林水産業（みなし仕入率 80%）</option>
+              <option value="70">第3種事業：製造業・建設業・電気業等（みなし仕入率 70%）</option>
+              <option value="60">第4種事業：飲食店業・その他（みなし仕入率 60%）</option>
+              <option value="50" selected>第5種事業：サービス業・運輸通信業等（みなし仕入率 50%）</option>
+              <option value="40">第6種事業：不動産業（みなし仕入率 40%）</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="revenue">年間売上（税込・万円）</label>
+              <input type="number" id="revenue" placeholder="例: 1000" min="0">
+              <div class="hint">消費税込みの年間売上高</div>
+            </div>
+            <div class="form-group">
+              <label for="purchases">年間仕入・経費（税込・万円）</label>
+              <input type="number" id="purchases" placeholder="例: 400" min="0">
+              <div class="hint">消費税がかかる仕入・経費の合計</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" onclick="calculate()">消費税を比較計算する</button>
+        </div>
+
+        <div class="results-area" id="results">
+          <div class="comparison-grid" id="comparisonGrid"></div>
+
+          <div class="calc-card">
+            <h2>計算の詳細</h2>
+            <table class="result-table">
+              <thead><tr><th>項目</th><th>本則課税</th><th>簡易課税</th></tr></thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <div class="calc-card">
+            <h2>みなし仕入率 一覧表</h2>
+            <table class="result-table">
+              <thead><tr><th>事業区分</th><th>該当業種</th><th>みなし仕入率</th></tr></thead>
+              <tbody>
+                <tr><td>第1種</td><td>卸売業</td><td>90%</td></tr>
+                <tr><td>第2種</td><td>小売業、農林水産業</td><td>80%</td></tr>
+                <tr><td>第3種</td><td>製造業、建設業、電気業等</td><td>70%</td></tr>
+                <tr><td>第4種</td><td>飲食店業、その他</td><td>60%</td></tr>
+                <tr><td>第5種</td><td>サービス業、運輸通信業</td><td>50%</td></tr>
+                <tr><td>第6種</td><td>不動産業</td><td>40%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+
+          <div class="disclaimer">
+            ※ この計算は目安です。複数の事業を営む場合は、各事業の売上割合に応じたみなし仕入率の加重平均が適用されます。正確な計算は税理士にご相談ください。簡易課税の選択には事前届出が必要です。
+          </div>
+        </div>
+      </section>
+
+      <div class="affiliate-section">
+        <h3>消費税の申告をもっと簡単にしたい方へ</h3>
+        <p>クラウド会計ソフトなら、消費税の本則課税・簡易課税の申告書を自動作成できます。</p>
+        <div class="affiliate-links">
+          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
+          <a href="#affiliate-yayoi" class="affiliate-btn">やよいの青色申告オンライン →</a>
+        </div>
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="faq-section" style="padding-left:0;padding-right:0;">
+        <h2>消費税・簡易課税FAQ</h2>
+        <details class="faq-item">
+          <summary>簡易課税制度を選択する条件は？</summary>
+          <div class="faq-answer">基準期間（個人事業主は前々年）の課税売上高が5,000万円以下の事業者が選択できます。適用を受けるには、適用したい課税期間の前日（個人は前年12月31日）までに「消費税簡易課税制度選択届出書」を税務署に提出する必要があります。一度選択すると2年間は変更できません（「2年縛り」）。</div>
+        </details>
+        <details class="faq-item">
+          <summary>簡易課税はやめた方がいい場合はありますか？</summary>
+          <div class="faq-answer">設備投資や大きな仕入がある年は、本則課税の方が有利な場合があります。本則課税では実際の仕入税額を控除できるため、仕入額が大きい場合は納税額が少なくなります。また、仕入税額が売上税額を上回る場合は、消費税の還付を受けることも可能です（簡易課税では還付は受けられません）。</div>
+        </details>
+        <details class="faq-item">
+          <summary>簡易課税の届出はいつまでに出す必要がありますか？</summary>
+          <div class="faq-answer">適用したい課税期間の開始日の前日までに提出が必要です。個人事業主の場合、2027年分から適用したい場合は2026年12月31日までに届出書を提出します。ただし、インボイス制度の経過措置として、インボイス登録と同時に届出をすれば、登録日の属する課税期間から適用可能です。</div>
+        </details>
+      </section>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved. | <a href="/">ホームへ戻る</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function calculate() {
+    const revenue = parseFloat(document.getElementById('revenue').value);
+    const purchases = parseFloat(document.getElementById('purchases').value);
+    const deemedRate = parseFloat(document.getElementById('industry').value) / 100;
+
+    if (!revenue || revenue <= 0) { alert('年間売上を入力してください'); return; }
+    if (purchases === undefined || isNaN(purchases)) { alert('年間仕入・経費を入力してください'); return; }
+
+    // 税抜売上・仕入
+    const revenueExTax = revenue / 1.1;
+    const salesTax = revenueExTax * 0.1;
+    const purchasesExTax = purchases / 1.1;
+    const inputTax = purchasesExTax * 0.1;
+
+    // 本則課税
+    const normalTax = Math.max(salesTax - inputTax, 0);
+    const isRefund = salesTax - inputTax < 0;
+    const refundAmount = isRefund ? Math.abs(salesTax - inputTax) : 0;
+
+    // 簡易課税
+    const simpleTax = salesTax * (1 - deemedRate);
+
+    // 実際の仕入率
+    const actualRate = purchases / revenue * 100;
+
+    // どちらが得か
+    const diff = normalTax - simpleTax;
+    const normalIsBetter = normalTax < simpleTax;
+
+    // Comparison grid
+    const grid = document.getElementById('comparisonGrid');
+    grid.innerHTML = `
+      <div class="comparison-card${!normalIsBetter ? '' : ' recommended'}">
+        <h4>本則課税</h4>
+        <div class="tax-amount">${isRefund ? '-' : ''}${formatYen(isRefund ? refundAmount : normalTax)}万円</div>
+        <div class="diff ${normalIsBetter ? 'diff-positive' : 'diff-negative'}">
+          ${normalIsBetter ? '最安' : isRefund ? '還付あり' : '+' + formatYen(Math.abs(diff)) + '万円'}
+        </div>
+      </div>
+      <div class="comparison-card${normalIsBetter ? '' : ' recommended'}">
+        <h4>簡易課税</h4>
+        <div class="tax-amount">${formatYen(simpleTax)}万円</div>
+        <div class="diff ${!normalIsBetter ? 'diff-positive' : 'diff-negative'}">
+          ${!normalIsBetter ? '最安' : '+' + formatYen(Math.abs(diff)) + '万円'}
+        </div>
+      </div>
+    `;
+
+    // Detail table
+    document.getElementById('detailBody').innerHTML = `
+      <tr><td>売上（税抜）</td><td>${formatYen(revenueExTax)}万円</td><td>${formatYen(revenueExTax)}万円</td></tr>
+      <tr><td>売上消費税</td><td>${formatYen(salesTax)}万円</td><td>${formatYen(salesTax)}万円</td></tr>
+      <tr><td>仕入（税抜）</td><td>${formatYen(purchasesExTax)}万円</td><td>—（みなし仕入率 ${deemedRate * 100}%）</td></tr>
+      <tr><td>仕入税額控除</td><td>${formatYen(inputTax)}万円</td><td>${formatYen(salesTax * deemedRate)}万円</td></tr>
+      <tr><td>実際の仕入率</td><td>${Math.round(actualRate)}%</td><td>みなし ${deemedRate * 100}%</td></tr>
+      <tr class="total"><td>納税額</td><td>${isRefund ? '-' + formatYen(refundAmount) + '万円（還付）' : formatYen(normalTax) + '万円'}</td><td>${formatYen(simpleTax)}万円</td></tr>
+      <tr><td>差額</td><td colspan="2" style="text-align:center;font-weight:600;color:var(--navy)">${normalIsBetter ? '本則課税が' : '簡易課税が'} ${formatYen(Math.abs(diff))}万円 お得</td></tr>
+    `;
+
+    // Recommendation
+    const rec = document.getElementById('recommendation');
+    let advice = '';
+    if (isRefund) {
+      advice = `仕入・経費が売上を上回っているため、<strong>本則課税</strong>なら${formatYen(refundAmount)}万円の<strong>消費税還付</strong>が受けられます。簡易課税では還付は受けられません。設備投資が大きい年は本則課税が有利です。`;
+    } else if (normalIsBetter) {
+      advice = `実際の仕入率（${Math.round(actualRate)}%）がみなし仕入率（${deemedRate * 100}%）を上回っているため、<strong>本則課税</strong>が${formatYen(Math.abs(diff))}万円お得です。ただし、本則課税は帳簿の記帳が複雑になるため、会計ソフトの利用をおすすめします。`;
+    } else {
+      advice = `実際の仕入率（${Math.round(actualRate)}%）がみなし仕入率（${deemedRate * 100}%）を下回っているため、<strong>簡易課税</strong>が${formatYen(Math.abs(diff))}万円お得です。`;
+      if (diff > 10) {
+        advice += `差額が大きいため、早めに「消費税簡易課税制度選択届出書」を提出することをおすすめします。`;
+      }
+    }
+    if (revenue > 5000) {
+      advice += '<br><br><span style="color:var(--red)">※ 基準期間の課税売上高が5,000万円を超えるため、簡易課税制度は選択できません。</span>';
+    }
+    rec.innerHTML = `<h4>判定結果</h4><p>${advice}</p>`;
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function formatYen(v) { return Math.round(v * 10) / 10; }
+  </script>
+
+</body>
+</html>
