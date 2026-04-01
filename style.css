@@ -677,6 +677,108 @@ input::placeholder, textarea::placeholder { color: var(--gray-400); }
   .site-logo svg { width: 22px; height: 22px; }
 }
 
+/* ===== 2026 Tax Reform Badge ===== */
+.reform-badge-hero {
+  display: inline-block;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  padding: 6px 20px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 12px rgba(245, 158, 11, 0.4);
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* ===== Reform Summary Section ===== */
+.reform-summary {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  margin: 2rem 0;
+}
+.reform-summary h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.reform-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 1.25rem;
+}
+.reform-point {
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-100);
+}
+.reform-point-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--text-lg);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+.reform-point h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.reform-point p {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* ===== Reform Reminder ===== */
+.reform-reminder {
+  background: linear-gradient(135deg, #fef3c7, #fff7ed);
+  border: 1px solid #fbbf24;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+.reform-reminder h3 {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+.reminder-dates {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.reminder-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.reminder-label {
+  font-size: var(--text-xs);
+  color: #92400e;
+  opacity: 0.8;
+}
+.reminder-value {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: #92400e;
+}
+
 /* ===== Print ===== */
 @media print {
   body { background: #fff; color: #000; font-size: 12pt; }

@@ -38,6 +38,7 @@
         税金シミュレーター
       </a>
       <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
         <a href="/tools/invoice-tax/">インボイス</a>
         <a href="/tools/freelance-income/">手取り計算</a>
         <a href="/tools/side-job-tax/">副業税金</a>
@@ -145,8 +146,8 @@
         <h3>確定申告をもっと簡単にしたい方へ</h3>
         <p>クラウド会計ソフトなら、日々の記帳から確定申告まで自動化。青色申告65万円控除も簡単に。</p>
         <div class="affiliate-links">
-          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
-          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
         </div>
       </div>
 
@@ -214,7 +215,17 @@
     const socialInsurance = nenkin + nhi;
 
     // 所得控除
-    const basicDeduction = 48; // 基礎控除48万円（所得2400万以下）
+    // 2026年基礎控除（段階制）
+    let basicDeduction = 48;
+    if (businessIncome <= 132) basicDeduction = 95;
+    else if (businessIncome <= 200) basicDeduction = 88;
+    else if (businessIncome <= 475) basicDeduction = 68;
+    else if (businessIncome <= 665) basicDeduction = 63;
+    else if (businessIncome <= 850) basicDeduction = 58;
+    else if (businessIncome <= 2350) basicDeduction = 48;
+    else if (businessIncome <= 2400) basicDeduction = 32;
+    else if (businessIncome <= 2450) basicDeduction = 16;
+    else basicDeduction = 0;
     const dependentDeduction = dependents * 38; // 扶養控除（一般）
     const totalDeduction = basicDeduction + socialInsurance + spouseDeduction + dependentDeduction;
 

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026年税制改正 影響額チェッカー｜あなたの減税額をシミュレーション【基礎控除・給与所得控除引上げ】</title>
+  <meta name="description" content="2026年税制改正であなたの税金がいくら安くなるかを無料シミュレーション。基礎控除引上げ・給与所得控除最低保障額65万円・123万円の壁に完全対応。給与所得者・フリーランス・副業者向け。">
+  <meta name="keywords" content="2026年 税制改正, 基礎控除 引上げ, 給与所得控除 65万円, 123万円の壁, 減税 シミュレーション, 103万円の壁 廃止">
+  <meta property="og:title" content="2026年税制改正 影響額チェッカー｜あなたの減税額をシミュレーション">
+  <meta property="og:description" content="2026年税制改正で税金がいくら安くなる？年収を入力するだけで旧制度との差額がわかります。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools-mauve.vercel.app/tools/tax-reform-2026/">
+  <link rel="canonical" href="https://tax-tools-mauve.vercel.app/tools/tax-reform-2026/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "2026年税制改正 影響額チェッカー",
+    "url": "https://tax-tools-mauve.vercel.app/tools/tax-reform-2026/",
+    "description": "2026年税制改正による減税額をシミュレーション。基礎控除引上げ・給与所得控除変更に対応。",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "2026年の基礎控除はいくらに変わりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026年（令和8年）の税制改正により、基礎控除は従来の一律48万円から、所得に応じた段階制に引き上げられます。合計所得金額132万円以下の場合は95万円、200万円以下で88万円、475万円以下で68万円、665万円以下で63万円、850万円以下で58万円、2350万円以下で48万円（従来通り）となります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "123万円の壁とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "従来の「103万円の壁」が2026年から「123万円の壁」に変更されます。これは基礎控除の引上げ（48万円→58万円）と給与所得控除の最低保障額の引上げ（55万円→65万円）により、給与収入123万円までは所得税がかからなくなるためです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "給与所得控除の最低保障額はいくらに変わりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "給与所得控除の最低保障額は55万円から65万円に引き上げられます。これにより、パート・アルバイトなど給与収入が少ない方の税負担が軽減されます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="reform-badge-hero">2026年税制改正対応</div>
+      <h1>2026年税制改正 影響額チェッカー</h1>
+      <p>基礎控除引上げ・給与所得控除変更で、あなたの税金はいくら安くなる？<br>年収を入力するだけで旧制度との差額がわかります。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>›</span>2026年税制改正 影響額チェッカー
+      </div>
+
+      <!-- 改正ポイント解説 -->
+      <section class="reform-summary">
+        <h2>2026年税制改正の3つのポイント</h2>
+        <div class="reform-points">
+          <div class="reform-point">
+            <div class="reform-point-icon" style="background:linear-gradient(135deg,#3b82f6,#2563eb);">1</div>
+            <h3>基礎控除の引上げ</h3>
+            <p>一律48万円 → 所得に応じた段階制（最大95万円）に引上げ。低・中所得者ほど恩恵大。</p>
+          </div>
+          <div class="reform-point">
+            <div class="reform-point-icon" style="background:linear-gradient(135deg,#10b981,#059669);">2</div>
+            <h3>給与所得控除の引上げ</h3>
+            <p>最低保障額が55万円 → 65万円に。パート・アルバイトの方も恩恵を受けられます。</p>
+          </div>
+          <div class="reform-point">
+            <div class="reform-point-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">3</div>
+            <h3>「123万円の壁」に変更</h3>
+            <p>「103万円の壁」が「123万円の壁」に。給与収入123万円まで所得税ゼロ。</p>
+          </div>
+        </div>
+      </section>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <!-- Calculator -->
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>影響額をチェック</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="workerType">働き方</label>
+              <select id="workerType" onchange="toggleFields()">
+                <option value="salary">会社員・パート（給与所得者）</option>
+                <option value="freelance">フリーランス・個人事業主</option>
+                <option value="sidejob">副業（本業は会社員）</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="annualIncome">年収 / 年間売上（万円）</label>
+              <input type="number" id="annualIncome" placeholder="例: 400" min="0">
+              <div class="hint" id="incomeHint">額面年収（税込）</div>
+            </div>
+          </div>
+          <div class="form-row" id="freelanceFields" style="display:none;">
+            <div class="form-group">
+              <label for="annualExpenses">年間経費（万円）</label>
+              <input type="number" id="annualExpenses" placeholder="例: 100" min="0" value="0">
+              <div class="hint">必要経費の合計額</div>
+            </div>
+            <div class="form-group">
+              <label for="filingType">申告方法</label>
+              <select id="filingType">
+                <option value="blue65">青色申告（65万円控除）</option>
+                <option value="blue10">青色申告（10万円控除）</option>
+                <option value="white">白色申告</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row" id="sidejobFields" style="display:none;">
+            <div class="form-group">
+              <label for="mainSalary">本業の年収（万円）</label>
+              <input type="number" id="mainSalary" placeholder="例: 450" min="0">
+            </div>
+            <div class="form-group">
+              <label for="sideExpenses">副業の経費（万円）</label>
+              <input type="number" id="sideExpenses" placeholder="例: 10" min="0" value="0">
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" onclick="calculateReform()">減税額をチェックする</button>
+        </div>
+
+        <div class="results-area" id="results">
+          <div class="result-summary" id="reformResult" style="text-align:center;">
+          </div>
+
+          <div class="comparison-grid" id="comparisonGrid">
+          </div>
+
+          <div class="calc-card">
+            <h2>旧制度 vs 新制度 詳細比較</h2>
+            <table class="result-table">
+              <thead><tr><th>項目</th><th>旧制度（2025年まで）</th><th>新制度（2026年〜）</th></tr></thead>
+              <tbody id="detailBody"></tbody>
+            </table>
+          </div>
+
+          <div class="recommendation" id="recommendation"></div>
+
+          <div class="disclaimer">
+            ※ 本計算は2026年度税制改正大綱に基づく概算です。基礎控除の段階制は所得に応じて変動します。正確な税額は税理士や最寄りの税務署にご確認ください。住民税の基礎控除変更分は含んでいません（住民税の改正詳細は今後確定予定）。
+          </div>
+        </div>
+      </section>
+
+      <!-- Affiliate Section -->
+      <div class="affiliate-section">
+        <h3>2026年の確定申告に備えよう</h3>
+        <p>クラウド会計ソフトなら税制改正にも自動対応。日々の記帳から確定申告まで、すべてオンラインで完結します。</p>
+        <div class="affiliate-links">
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
+          <a href="https://www.yayoi-kk.co.jp/products/aoiro_ol/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">やよいの青色申告オンライン →</a>
+        </div>
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <!-- 振替納税リマインダー -->
+      <div class="reform-reminder">
+        <h3>振替納税の期限にご注意ください</h3>
+        <div class="reminder-dates">
+          <div class="reminder-date">
+            <span class="reminder-label">所得税の振替納税日</span>
+            <span class="reminder-value">2026年4月23日（木）</span>
+          </div>
+          <div class="reminder-date">
+            <span class="reminder-label">消費税の振替納税日</span>
+            <span class="reminder-value">2026年4月30日（木）</span>
+          </div>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gray-500);margin-top:12px;">振替納税を利用している方は、口座残高の確認をお忘れなく。</p>
+      </div>
+
+      <!-- FAQ -->
+      <section class="faq-section" style="padding-left:0;padding-right:0;">
+        <h2>2026年税制改正FAQ</h2>
+        <details class="faq-item">
+          <summary>2026年の基礎控除はいくらに変わりますか？</summary>
+          <div class="faq-answer">
+            2026年（令和8年）の税制改正により、基礎控除は従来の一律48万円から、所得に応じた段階制に引き上げられます。合計所得金額が132万円以下の場合は95万円、200万円以下で88万円、475万円以下で68万円、665万円以下で63万円、850万円以下で58万円、2,350万円以下で48万円（従来通り）です。所得2,350万円超は段階的に縮小し、2,500万円超で0円となります。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>「123万円の壁」とは何ですか？</summary>
+          <div class="faq-answer">
+            従来は給与所得控除55万円 + 基礎控除48万円 = 103万円までは所得税がかからない「103万円の壁」がありました。2026年からは給与所得控除の最低保障額が65万円に、基礎控除が所得に応じて最大95万円に引き上げられるため、給与収入が123万円（65万円 + 58万円）まで所得税がかからなくなります。これが「123万円の壁」です。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>給与所得控除の最低保障額が65万円に上がるとどう変わりますか？</summary>
+          <div class="faq-answer">
+            給与所得控除の最低保障額が55万円から65万円に引き上げられることで、給与収入が少ない方（パート・アルバイトなど）の課税対象となる所得が10万円減ります。これにより所得税が年間5,000円〜1万円程度軽減される見込みです。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>フリーランスにも影響はありますか？</summary>
+          <div class="faq-answer">
+            はい、あります。フリーランス（個人事業主）は給与所得控除の対象外ですが、基礎控除の引上げの恩恵を受けます。特に合計所得金額が低い方ほど基礎控除の増額幅が大きいため、減税効果が大きくなります。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>いつから適用されますか？</summary>
+          <div class="faq-answer">
+            2026年分の所得税から適用されます。つまり、2026年1月1日〜12月31日の所得に対して新制度が適用され、2027年2〜3月の確定申告で反映されます。給与所得者は2026年1月以降の源泉徴収から順次反映されます。
+          </div>
+        </details>
+      </section>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>税金シミュレーター</h4>
+          <p>フリーランス・個人事業主のための無料税金計算ツール。2026年税制改正に完全対応。</p>
+        </div>
+        <div class="footer-links">
+          <h5>計算ツール</h5>
+          <ul>
+            <li><a href="/tools/tax-reform-2026/">2026年改正チェッカー</a></li>
+            <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
+            <li><a href="/tools/freelance-income/">手取り計算</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
+            <li><a href="/tools/refund-calculator/">還付金計算</a></li>
+            <li><a href="/tools/consumption-tax/">消費税計算</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function toggleFields() {
+    var type = document.getElementById('workerType').value;
+    var freelanceFields = document.getElementById('freelanceFields');
+    var sidejobFields = document.getElementById('sidejobFields');
+    var hint = document.getElementById('incomeHint');
+
+    freelanceFields.style.display = 'none';
+    sidejobFields.style.display = 'none';
+
+    if (type === 'salary') {
+      hint.textContent = '額面年収（税込）';
+    } else if (type === 'freelance') {
+      freelanceFields.style.display = 'grid';
+      hint.textContent = '税込の年間売上';
+    } else if (type === 'sidejob') {
+      sidejobFields.style.display = 'grid';
+      hint.textContent = '副業の年間収入（万円）';
+    }
+  }
+
+  // 旧制度: 基礎控除 一律48万円
+  function oldBasicDeduction(totalIncome) {
+    if (totalIncome <= 2400) return 48;
+    if (totalIncome <= 2450) return 32;
+    if (totalIncome <= 2500) return 16;
+    return 0;
+  }
+
+  // 新制度: 2026年 基礎控除（段階制）
+  // 合計所得金額に応じた基礎控除額
+  function newBasicDeduction(totalIncome) {
+    if (totalIncome <= 132) return 95;
+    if (totalIncome <= 200) return 88;
+    if (totalIncome <= 475) return 68;
+    if (totalIncome <= 665) return 63;
+    if (totalIncome <= 850) return 58;
+    if (totalIncome <= 2350) return 48;
+    if (totalIncome <= 2400) return 32;
+    if (totalIncome <= 2450) return 16;
+    return 0;
+  }
+
+  // 旧制度: 給与所得控除（最低保障額55万円）
+  function oldSalaryDeduction(salary) {
+    if (salary <= 162.5) return 55;
+    if (salary <= 180) return salary * 0.4 - 10;
+    if (salary <= 360) return salary * 0.3 + 8;
+    if (salary <= 660) return salary * 0.2 + 44;
+    if (salary <= 850) return salary * 0.1 + 110;
+    return 195;
+  }
+
+  // 新制度: 給与所得控除（最低保障額65万円）
+  function newSalaryDeduction(salary) {
+    if (salary <= 190) return 65;
+    if (salary <= 360) return salary * 0.3 + 8;
+    if (salary <= 660) return salary * 0.2 + 44;
+    if (salary <= 850) return salary * 0.1 + 110;
+    return 195;
+  }
+
+  // 所得税計算（万円単位）
+  function calcIncomeTax(taxable) {
+    if (taxable <= 0) return 0;
+    var t = taxable;
+    if (t <= 195) return t * 0.05;
+    if (t <= 330) return 195 * 0.05 + (t - 195) * 0.10;
+    if (t <= 695) return 195 * 0.05 + 135 * 0.10 + (t - 330) * 0.20;
+    if (t <= 900) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + (t - 695) * 0.23;
+    if (t <= 1800) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + (t - 900) * 0.33;
+    if (t <= 4000) return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + 900 * 0.33 + (t - 1800) * 0.40;
+    return 195 * 0.05 + 135 * 0.10 + 365 * 0.20 + 205 * 0.23 + 900 * 0.33 + 2200 * 0.40 + (t - 4000) * 0.45;
+  }
+
+  function calculateReform() {
+    var type = document.getElementById('workerType').value;
+    var income = parseFloat(document.getElementById('annualIncome').value);
+    if (!income || income <= 0) { alert('年収 / 年間売上を入力してください'); return; }
+
+    var oldDeduction, newDeduction, oldBasic, newBasic, oldTaxableIncome, newTaxableIncome;
+    var label1 = '', label2 = '';
+
+    if (type === 'salary') {
+      // 給与所得者
+      oldDeduction = oldSalaryDeduction(income);
+      newDeduction = newSalaryDeduction(income);
+      var oldIncome = Math.max(income - oldDeduction, 0);
+      var newIncome = Math.max(income - newDeduction, 0);
+      oldBasic = oldBasicDeduction(oldIncome);
+      newBasic = newBasicDeduction(newIncome);
+
+      // 社会保険料概算（給与の15%）
+      var socialIns = income * 0.15;
+
+      oldTaxableIncome = Math.max(oldIncome - oldBasic - socialIns, 0);
+      newTaxableIncome = Math.max(newIncome - newBasic - socialIns, 0);
+      label1 = '給与所得控除';
+      label2 = '社会保険料（概算）';
+
+      showDetail(income, oldDeduction, newDeduction, oldBasic, newBasic, socialIns, socialIns, oldTaxableIncome, newTaxableIncome, label1, label2, '給与収入');
+
+    } else if (type === 'freelance') {
+      // フリーランス
+      var expenses = parseFloat(document.getElementById('annualExpenses').value) || 0;
+      var filingType = document.getElementById('filingType').value;
+      var blueDeduction = 0;
+      if (filingType === 'blue65') blueDeduction = 65;
+      else if (filingType === 'blue10') blueDeduction = 10;
+
+      var businessIncome = Math.max(income - expenses - blueDeduction, 0);
+      oldBasic = oldBasicDeduction(businessIncome);
+      newBasic = newBasicDeduction(businessIncome);
+
+      // 社保概算
+      var nenkin = 20.4;
+      var nhiBasis = Math.max(businessIncome - 43, 0);
+      var nhi = Math.min(nhiBasis * 0.10, 106);
+      var socialIns = nenkin + nhi;
+
+      oldTaxableIncome = Math.max(businessIncome - oldBasic - socialIns, 0);
+      newTaxableIncome = Math.max(businessIncome - newBasic - socialIns, 0);
+
+      showDetailFreelance(income, expenses, blueDeduction, businessIncome, oldBasic, newBasic, socialIns, oldTaxableIncome, newTaxableIncome);
+
+    } else if (type === 'sidejob') {
+      // 副業者
+      var mainSal = parseFloat(document.getElementById('mainSalary').value) || 0;
+      var sideExp = parseFloat(document.getElementById('sideExpenses').value) || 0;
+      var sideProfit = Math.max(income - sideExp, 0);
+
+      // 本業の給与所得
+      var oldMainDeduction = oldSalaryDeduction(mainSal);
+      var newMainDeduction = newSalaryDeduction(mainSal);
+      var oldMainIncome = Math.max(mainSal - oldMainDeduction, 0);
+      var newMainIncome = Math.max(mainSal - newMainDeduction, 0);
+
+      // 合算所得
+      var oldTotalIncome = oldMainIncome + sideProfit;
+      var newTotalIncome = newMainIncome + sideProfit;
+
+      oldBasic = oldBasicDeduction(oldTotalIncome);
+      newBasic = newBasicDeduction(newTotalIncome);
+
+      var socialIns = mainSal * 0.15;
+
+      oldTaxableIncome = Math.max(oldTotalIncome - oldBasic - socialIns, 0);
+      newTaxableIncome = Math.max(newTotalIncome - newBasic - socialIns, 0);
+
+      showDetailSidejob(mainSal, income, sideExp, sideProfit, oldMainDeduction, newMainDeduction, oldBasic, newBasic, socialIns, oldTaxableIncome, newTaxableIncome);
+    }
+
+    // 所得税計算
+    var oldTax = calcIncomeTax(oldTaxableIncome);
+    var newTax = calcIncomeTax(newTaxableIncome);
+    // 復興特別所得税
+    oldTax = oldTax * 1.021;
+    newTax = newTax * 1.021;
+
+    var saving = oldTax - newTax;
+
+    // 住民税の減税（基礎控除差分 × 10%）— 簡易計算
+    // 注: 住民税の基礎控除も改正予定だが詳細未確定のため所得税分のみを表示
+    var oldResidentTax = Math.max(oldTaxableIncome * 0.10 + 0.5, 0);
+    var newResidentTax = Math.max(newTaxableIncome * 0.10 + 0.5, 0);
+    var residentSaving = oldResidentTax - newResidentTax;
+    var totalSaving = saving + Math.max(residentSaving, 0);
+
+    // Display result
+    var resultEl = document.getElementById('reformResult');
+    if (totalSaving > 0) {
+      resultEl.innerHTML = '<h3>2026年税制改正による減税額</h3>' +
+        '<div class="amount" style="color:#5eead4;font-size:clamp(2rem,1.5rem+2vw,3rem);">年間 約' + formatYen(totalSaving) + '万円 お得に！</div>' +
+        '<div class="sub">所得税: -' + formatYen(saving) + '万円 ／ 住民税: -' + formatYen(Math.max(residentSaving, 0)) + '万円（概算）</div>';
+    } else {
+      resultEl.innerHTML = '<h3>2026年税制改正による影響</h3>' +
+        '<div class="amount" style="color:#94a3b8;font-size:clamp(1.5rem,1.2rem+1.5vw,2rem);">影響なし（変化なし）</div>' +
+        '<div class="sub">この所得水準では旧制度と新制度で基礎控除額が同じです。</div>';
+    }
+
+    // Comparison cards
+    document.getElementById('comparisonGrid').innerHTML =
+      '<div class="comparison-card">' +
+        '<h4>旧制度（2025年まで）</h4>' +
+        '<div class="tax-amount">' + formatYen(oldTax + oldResidentTax) + '万円</div>' +
+        '<div class="diff" style="font-size:0.85rem;color:var(--gray-500)">所得税+住民税</div>' +
+      '</div>' +
+      '<div class="comparison-card recommended">' +
+        '<h4>新制度（2026年〜）</h4>' +
+        '<div class="tax-amount">' + formatYen(newTax + newResidentTax) + '万円</div>' +
+        '<div class="diff diff-positive">' + (totalSaving > 0 ? '-' + formatYen(totalSaving) + '万円' : '変化なし') + '</div>' +
+      '</div>';
+
+    document.getElementById('results').classList.add('show');
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function showDetail(income, oldDed, newDed, oldBasic, newBasic, oldSocial, newSocial, oldTaxable, newTaxable, label1, label2, incomeLabel) {
+    var body = document.getElementById('detailBody');
+    body.innerHTML =
+      '<tr><td>' + incomeLabel + '</td><td>' + formatYen(income) + '万円</td><td>' + formatYen(income) + '万円</td></tr>' +
+      '<tr><td>' + label1 + '</td><td>-' + formatYen(oldDed) + '万円</td><td>-' + formatYen(newDed) + '万円' + (newDed > oldDed ? ' <span style="color:var(--green);font-size:0.8rem">+' + formatYen(newDed - oldDed) + '万円UP</span>' : '') + '</td></tr>' +
+      '<tr><td>基礎控除</td><td>-' + formatYen(oldBasic) + '万円</td><td>-' + formatYen(newBasic) + '万円' + (newBasic > oldBasic ? ' <span style="color:var(--green);font-size:0.8rem">+' + formatYen(newBasic - oldBasic) + '万円UP</span>' : '') + '</td></tr>' +
+      '<tr><td>' + label2 + '</td><td>-' + formatYen(oldSocial) + '万円</td><td>-' + formatYen(newSocial) + '万円</td></tr>' +
+      '<tr class="total"><td>課税所得</td><td>' + formatYen(oldTaxable) + '万円</td><td>' + formatYen(newTaxable) + '万円</td></tr>';
+
+    showRecommendation(oldBasic, newBasic, oldDed, newDed);
+  }
+
+  function showDetailFreelance(income, expenses, blueDed, bizIncome, oldBasic, newBasic, social, oldTaxable, newTaxable) {
+    var body = document.getElementById('detailBody');
+    body.innerHTML =
+      '<tr><td>年間売上</td><td>' + formatYen(income) + '万円</td><td>' + formatYen(income) + '万円</td></tr>' +
+      '<tr><td>経費</td><td>-' + formatYen(expenses) + '万円</td><td>-' + formatYen(expenses) + '万円</td></tr>' +
+      '<tr><td>青色申告特別控除</td><td>-' + formatYen(blueDed) + '万円</td><td>-' + formatYen(blueDed) + '万円</td></tr>' +
+      '<tr><td>事業所得</td><td>' + formatYen(bizIncome) + '万円</td><td>' + formatYen(bizIncome) + '万円</td></tr>' +
+      '<tr><td>基礎控除</td><td>-' + formatYen(oldBasic) + '万円</td><td>-' + formatYen(newBasic) + '万円' + (newBasic > oldBasic ? ' <span style="color:var(--green);font-size:0.8rem">+' + formatYen(newBasic - oldBasic) + '万円UP</span>' : '') + '</td></tr>' +
+      '<tr><td>社会保険料（概算）</td><td>-' + formatYen(social) + '万円</td><td>-' + formatYen(social) + '万円</td></tr>' +
+      '<tr class="total"><td>課税所得</td><td>' + formatYen(oldTaxable) + '万円</td><td>' + formatYen(newTaxable) + '万円</td></tr>';
+
+    showRecommendation(oldBasic, newBasic, 0, 0);
+  }
+
+  function showDetailSidejob(mainSal, sideIncome, sideExp, sideProfit, oldMainDed, newMainDed, oldBasic, newBasic, social, oldTaxable, newTaxable) {
+    var body = document.getElementById('detailBody');
+    body.innerHTML =
+      '<tr><td>本業年収</td><td>' + formatYen(mainSal) + '万円</td><td>' + formatYen(mainSal) + '万円</td></tr>' +
+      '<tr><td>本業の給与所得控除</td><td>-' + formatYen(oldMainDed) + '万円</td><td>-' + formatYen(newMainDed) + '万円' + (newMainDed > oldMainDed ? ' <span style="color:var(--green);font-size:0.8rem">+' + formatYen(newMainDed - oldMainDed) + '万円UP</span>' : '') + '</td></tr>' +
+      '<tr><td>副業収入</td><td>' + formatYen(sideIncome) + '万円</td><td>' + formatYen(sideIncome) + '万円</td></tr>' +
+      '<tr><td>副業経費</td><td>-' + formatYen(sideExp) + '万円</td><td>-' + formatYen(sideExp) + '万円</td></tr>' +
+      '<tr><td>基礎控除</td><td>-' + formatYen(oldBasic) + '万円</td><td>-' + formatYen(newBasic) + '万円' + (newBasic > oldBasic ? ' <span style="color:var(--green);font-size:0.8rem">+' + formatYen(newBasic - oldBasic) + '万円UP</span>' : '') + '</td></tr>' +
+      '<tr><td>社会保険料（概算）</td><td>-' + formatYen(social) + '万円</td><td>-' + formatYen(social) + '万円</td></tr>' +
+      '<tr class="total"><td>課税所得</td><td>' + formatYen(oldTaxable) + '万円</td><td>' + formatYen(newTaxable) + '万円</td></tr>';
+
+    showRecommendation(oldBasic, newBasic, oldMainDed, newMainDed);
+  }
+
+  function showRecommendation(oldBasic, newBasic, oldDed, newDed) {
+    var rec = document.getElementById('recommendation');
+    var tips = [];
+    var basicDiff = newBasic - oldBasic;
+    var dedDiff = newDed - oldDed;
+
+    if (basicDiff > 0) {
+      tips.push('基礎控除が' + formatYen(oldBasic) + '万円 → ' + formatYen(newBasic) + '万円に' + formatYen(basicDiff) + '万円引き上げられます。');
+    }
+    if (dedDiff > 0) {
+      tips.push('給与所得控除が' + formatYen(oldDed) + '万円 → ' + formatYen(newDed) + '万円に' + formatYen(dedDiff) + '万円引き上げられます。');
+    }
+    if (basicDiff === 0 && dedDiff === 0) {
+      tips.push('この所得水準では、2026年の改正による控除額の変化はありません。ただし、iDeCoや小規模企業共済など他の節税手段の活用をご検討ください。');
+    }
+    tips.push('確定申告ソフト（freee・マネーフォワード・やよい）を使えば、2026年の新制度にも自動対応で申告できます。');
+
+    rec.innerHTML = '<h4>ポイント</h4><p>' + tips.join('<br>') + '</p>';
+  }
+
+  function formatYen(v) { return Math.round(v * 10) / 10; }
+  </script>
+
+</body>
+</html>

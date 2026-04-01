@@ -38,6 +38,7 @@
         税金シミュレーター
       </a>
       <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
         <a href="/tools/invoice-tax/">インボイス</a>
         <a href="/tools/freelance-income/">手取り計算</a>
         <a href="/tools/side-job-tax/">副業税金</a>
@@ -206,7 +207,17 @@
     const socialIns = income * 0.15;
 
     // 年末調整で適用済みの控除（基礎控除+社保+生命保険+地震保険）
-    const basicDeduction = 48;
+    // 2026年基礎控除（段階制）
+    let basicDeduction = 48;
+    if (salaryIncome <= 132) basicDeduction = 95;
+    else if (salaryIncome <= 200) basicDeduction = 88;
+    else if (salaryIncome <= 475) basicDeduction = 68;
+    else if (salaryIncome <= 665) basicDeduction = 63;
+    else if (salaryIncome <= 850) basicDeduction = 58;
+    else if (salaryIncome <= 2350) basicDeduction = 48;
+    else if (salaryIncome <= 2400) basicDeduction = 32;
+    else if (salaryIncome <= 2450) basicDeduction = 16;
+    else basicDeduction = 0;
     const lifeInsDeduction = Math.min(lifeIns, 12); // 上限12万
     const earthquakeDeduction = Math.min(earthquake, 5); // 上限5万
 
@@ -319,9 +330,9 @@
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
   }
 
+  // 給与所得控除（2026年改正：最低保障額65万円に引上げ）
   function calcSalaryDeduction(salary) {
-    if (salary <= 162.5) return 55;
-    if (salary <= 180) return salary * 0.4 - 10;
+    if (salary <= 190) return 65;
     if (salary <= 360) return salary * 0.3 + 8;
     if (salary <= 660) return salary * 0.2 + 44;
     if (salary <= 850) return salary * 0.1 + 110;

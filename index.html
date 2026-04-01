@@ -95,6 +95,7 @@
         税金シミュレーター
       </a>
       <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
         <a href="/tools/invoice-tax/">インボイス</a>
         <a href="/tools/freelance-income/">手取り計算</a>
         <a href="/tools/side-job-tax/">副業税金</a>
@@ -107,6 +108,7 @@
   <!-- HERO with inline calculator -->
   <section class="hero">
     <div class="container">
+      <div class="reform-badge-hero fade-in">2026年税制改正対応</div>
       <h1 class="hero-title fade-in">あなたの手取り、今すぐ計算</h1>
       <p class="hero-sub fade-in delay-1">年収を入れるだけ。3秒で結果がわかります。</p>
 
@@ -166,6 +168,18 @@
       <!-- Tool cards with preview results -->
       <section class="tools-section">
         <div class="tools-grid">
+
+          <a href="/tools/tax-reform-2026/" class="tool-card card-animate" style="border:2px solid var(--accent);background:linear-gradient(135deg,#f0fdfa,#e0f2fe);">
+            <div class="card-icon highlight">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>2026年改正 影響額チェッカー</h3>
+            <div class="card-preview">
+              <span class="preview-label">年収400万の場合</span>
+              <span class="preview-result">年間 約2万円 お得に！</span>
+            </div>
+            <span class="badge accent">NEW 2026年改正</span>
+          </a>
 
           <a href="/tools/invoice-tax/" class="tool-card card-animate">
             <div class="card-icon">
@@ -239,9 +253,9 @@
         <h3>確定申告をもっと簡単にしたい方へ</h3>
         <p>クラウド会計ソフトなら、日々の記帳から確定申告まで自動化。インボイス制度にも完全対応。</p>
         <div class="affiliate-links">
-          <a href="#affiliate-freee" class="affiliate-btn">freee会計を無料で試す →</a>
-          <a href="#affiliate-moneyforward" class="affiliate-btn">マネーフォワード確定申告 →</a>
-          <a href="#affiliate-yayoi" class="affiliate-btn">やよいの青色申告オンライン →</a>
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
+          <a href="https://www.yayoi-kk.co.jp/products/aoiro_ol/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">やよいの青色申告オンライン →</a>
         </div>
       </div>
 
@@ -340,6 +354,7 @@
         <div class="footer-links">
           <h5>計算ツール</h5>
           <ul>
+            <li><a href="/tools/tax-reform-2026/">2026年改正チェッカー</a></li>
             <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
             <li><a href="/tools/freelance-income/">手取り計算</a></li>
             <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
@@ -384,8 +399,22 @@
       // Expenses estimate (30% of income)
       var expenses = income * 0.3;
 
+      // 2026年基礎控除（段階制）
+      var businessIncome = income - expenses - blueDeduction;
+      var businessIncomeMan = businessIncome / 10000;
+      var basicDeduction;
+      if (businessIncomeMan <= 132) basicDeduction = 950000;
+      else if (businessIncomeMan <= 200) basicDeduction = 880000;
+      else if (businessIncomeMan <= 475) basicDeduction = 680000;
+      else if (businessIncomeMan <= 665) basicDeduction = 630000;
+      else if (businessIncomeMan <= 850) basicDeduction = 580000;
+      else if (businessIncomeMan <= 2350) basicDeduction = 480000;
+      else if (businessIncomeMan <= 2400) basicDeduction = 320000;
+      else if (businessIncomeMan <= 2450) basicDeduction = 160000;
+      else basicDeduction = 0;
+
       // Taxable income
-      var taxableIncome = Math.max(0, income - expenses - blueDeduction - 480000); // basic deduction
+      var taxableIncome = Math.max(0, income - expenses - blueDeduction - basicDeduction); // 2026 basic deduction
 
       // Income tax (simplified brackets)
       var incomeTax = 0;
