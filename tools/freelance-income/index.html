@@ -27,6 +27,7 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
   }
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -135,6 +136,29 @@
           </div>
 
           <div class="recommendation" id="recommendation"></div>
+
+          <div class="premium-cta" id="premiumCta" style="display:none">
+            <div class="premium-badge">PRO</div>
+            <h3>詳細PDFレポートを保存</h3>
+            <p>計算結果を見やすいPDFレポートで出力。税金内訳・節税アドバイス・月次キャッシュフロー表付き。確定申告の参考資料に。</p>
+            <ul class="premium-features">
+              <li>税金・社保の全項目内訳表</li>
+              <li>月次キャッシュフロー予測</li>
+              <li>あなた専用の節税アドバイス</li>
+              <li>青色vs白色の比較シミュレーション</li>
+            </ul>
+            <div class="premium-price">&#165;500<span class="premium-price-note">（税込・買い切り）</span></div>
+            <a href="https://buy.stripe.com/4gMfZi4zZ8Ei9KMenq6EU04" class="btn btn-lg btn-premium" id="buyPdfBtn">PDFレポートを購入する</a>
+            <p class="premium-secure">Stripe安全決済 / クレジットカード対応</p>
+          </div>
+
+          <div id="pdfDownloadArea" style="display:none">
+            <div class="premium-cta" style="border-color:var(--green)">
+              <h3 style="color:var(--green)">購入ありがとうございます</h3>
+              <p>下のボタンからPDFレポートをダウンロードしてください。</p>
+              <button class="btn btn-lg btn-premium" onclick="generatePDF()" style="background:linear-gradient(135deg,var(--green),#00c775)">PDFをダウンロード</button>
+            </div>
+          </div>
 
           <div class="disclaimer">
             ※ この計算は目安です。国民健康保険料は自治体により異なります（概算値で計算）。正確な税額は税理士にご相談ください。
@@ -317,7 +341,22 @@
     if (tips.length === 0) tips.push('現在の申告方法で適切に節税されています。');
     rec.innerHTML = `<h4>節税アドバイス</h4><p>${tips.join('<br>')}</p>`;
 
+    // Save calculation data for PDF
+    window._calcData = {
+      revenue, expenses, blueDeduction, businessIncome,
+      totalIncomeTax, residentTax, bizTax, consumptionTax,
+      nhi, nenkin, socialInsurance, takeHome, totalTax, totalDeductions,
+      filing, invoiceStatus, dependents, spouseDeduction, taxableIncome, tips
+    };
+
     document.getElementById('results').classList.add('show');
+    // Show premium CTA (or download area if already paid)
+    if (new URLSearchParams(window.location.search).get('paid') === '1') {
+      document.getElementById('pdfDownloadArea').style.display = 'block';
+      document.getElementById('premiumCta').style.display = 'none';
+    } else {
+      document.getElementById('premiumCta').style.display = 'block';
+    }
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -336,6 +375,122 @@
   }
 
   function formatYen(v) { return Math.round(v * 10) / 10; }
+
+  function generatePDF() {
+    const d = window._calcData;
+    if (!d) { alert('先に計算を実行してください'); return; }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+    // Header
+    doc.setFillColor(15, 18, 25);
+    doc.rect(0, 0, 210, 40, 'F');
+    doc.setTextColor(94, 234, 212);
+    doc.setFontSize(18);
+    doc.text('Freelance Tax Report', 15, 18);
+    doc.setFontSize(10);
+    doc.setTextColor(200, 200, 200);
+    doc.text('tax-tools.vercel.app | ' + new Date().toLocaleDateString('ja-JP'), 15, 28);
+
+    let y = 52;
+    doc.setTextColor(30, 30, 30);
+
+    // Summary
+    doc.setFontSize(14);
+    doc.text('Summary', 15, y); y += 10;
+    doc.setFontSize(10);
+    const summary = [
+      ['Annual Revenue', d.revenue + ' man yen'],
+      ['Expenses', d.expenses + ' man yen'],
+      ['Blue Filing Deduction', d.blueDeduction + ' man yen'],
+      ['Business Income', formatYen(d.businessIncome) + ' man yen'],
+      ['Take-Home', formatYen(d.takeHome) + ' man yen'],
+      ['Take-Home Rate', Math.round(d.takeHome / d.revenue * 100) + '%'],
+    ];
+    summary.forEach(([k, v]) => {
+      doc.text(k, 20, y);
+      doc.text(String(v), 120, y);
+      y += 7;
+    });
+
+    // Tax Breakdown
+    y += 5;
+    doc.setFontSize(14);
+    doc.text('Tax & Insurance Breakdown', 15, y); y += 10;
+    doc.setFontSize(10);
+    const taxes = [
+      ['Income Tax (incl. reconstruction)', formatYen(d.totalIncomeTax) + ' man yen'],
+      ['Resident Tax', formatYen(d.residentTax) + ' man yen'],
+      ['Business Tax', formatYen(d.bizTax) + ' man yen'],
+      ['Consumption Tax', formatYen(d.consumptionTax) + ' man yen'],
+      ['National Health Insurance', formatYen(d.nhi) + ' man yen'],
+      ['National Pension', formatYen(d.nenkin) + ' man yen'],
+      ['Total Deductions', formatYen(d.totalDeductions) + ' man yen'],
+    ];
+    taxes.forEach(([k, v]) => {
+      doc.text(k, 20, y);
+      doc.text(String(v), 120, y);
+      y += 7;
+    });
+
+    // Monthly Cash Flow
+    y += 5;
+    doc.setFontSize(14);
+    doc.text('Monthly Cash Flow Estimate', 15, y); y += 10;
+    doc.setFontSize(10);
+    const monthly = [
+      ['Monthly Revenue', formatYen(d.revenue / 12) + ' man yen'],
+      ['Monthly Expenses', formatYen(d.expenses / 12) + ' man yen'],
+      ['Monthly Tax Reserve', formatYen(d.totalTax / 12) + ' man yen'],
+      ['Monthly Insurance', formatYen(d.socialInsurance / 12) + ' man yen'],
+      ['Monthly Take-Home', formatYen(d.takeHome / 12) + ' man yen'],
+    ];
+    monthly.forEach(([k, v]) => {
+      doc.text(k, 20, y);
+      doc.text(String(v), 120, y);
+      y += 7;
+    });
+
+    // Blue vs White comparison
+    y += 5;
+    doc.setFontSize(14);
+    doc.text('Blue vs White Filing Comparison', 15, y); y += 10;
+    doc.setFontSize(10);
+    const whiteIncome = Math.max(d.revenue - d.expenses, 0);
+    const blue65Income = Math.max(d.revenue - d.expenses - 65, 0);
+    const whiteTax = calcIncomeTax(Math.max(whiteIncome - 48 - d.socialInsurance - d.spouseDeduction - d.dependents * 38, 0));
+    const blue65Tax = calcIncomeTax(Math.max(blue65Income - 48 - d.socialInsurance - d.spouseDeduction - d.dependents * 38, 0));
+    const savings = whiteTax - blue65Tax;
+    doc.text('White Filing Tax: ' + formatYen(whiteTax) + ' man yen', 20, y); y += 7;
+    doc.text('Blue 65 Filing Tax: ' + formatYen(blue65Tax) + ' man yen', 20, y); y += 7;
+    doc.text('Potential Savings: ' + formatYen(savings) + ' man yen/year', 20, y); y += 10;
+
+    // Tips
+    if (d.tips && d.tips.length > 0) {
+      doc.setFontSize(14);
+      doc.text('Tax Optimization Tips', 15, y); y += 10;
+      doc.setFontSize(9);
+      d.tips.forEach(tip => {
+        const lines = doc.splitTextToSize('- ' + tip, 170);
+        doc.text(lines, 20, y);
+        y += lines.length * 5 + 3;
+      });
+    }
+
+    // Footer
+    doc.setFontSize(8);
+    doc.setTextColor(150, 150, 150);
+    doc.text('Generated by tax-tools.vercel.app | This is an estimate, not tax advice.', 15, 285);
+
+    doc.save('freelance-tax-report-' + new Date().toISOString().slice(0, 10) + '.pdf');
+  }
+
+  // Auto-trigger if returning from payment
+  window.addEventListener('DOMContentLoaded', () => {
+    if (new URLSearchParams(window.location.search).get('paid') === '1') {
+      document.querySelector('.btn-primary')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
   </script>
 
 </body>
