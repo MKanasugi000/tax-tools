@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年収別 手取り比較表｜300万〜2000万の税金・社保・手取り一覧【2026年】</title>
+  <meta name="description" content="年収300万〜2000万円の手取り額を一覧表で比較。会社員とフリーランスの手取り差も表示。所得税・住民税・社会保険料の内訳がわかる年収別シミュレーション。">
+  <meta name="keywords" content="年収 手取り 一覧, 年収別 税金, 手取り 計算 一覧表, 年収 手取り 早見表">
+  <meta property="og:title" content="年収別 手取り比較表【2026年最新】">
+  <meta property="og:description" content="年収300万〜2000万の手取り額を一覧比較。会社員vsフリーランスの差額も表示。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools-mauve.vercel.app/tools/income-comparison/">
+  <link rel="canonical" href="https://tax-tools-mauve.vercel.app/tools/income-comparison/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "年収別 手取り比較表",
+    "url": "https://tax-tools-mauve.vercel.app/tools/income-comparison/",
+    "description": "年収300万〜2000万円の手取り額を一覧比較するツール",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "年収400万円の手取りはいくらですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "年収400万円の会社員の手取りは約315万円です。所得税約8万円、住民税約18万円、社会保険料約59万円が差し引かれます。ただし、扶養家族の人数や加入する健康保険組合によって金額は変動します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "会社員とフリーランスで手取りはどれくらい違いますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "同じ年収の場合、フリーランスは会社員より手取りが少なくなることが一般的です。フリーランスは社会保険料が全額自己負担（会社員は折半）で、厚生年金ではなく国民年金のため将来の年金額も少なくなります。ただし、青色申告特別控除や経費計上で税金を抑えることが可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "年収が上がると手取り率は下がりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、日本の所得税は累進課税のため、年収が上がるほど税率が高くなり、手取り率（手取り÷年収）は下がります。年収300万円の手取り率は約79%ですが、年収1000万円では約72%、年収2000万円では約62%程度まで下がります。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>年収別 手取り比較表</h1>
+      <p>年収300万〜2,000万円の手取り・税金・社保を一覧比較。会社員とフリーランスの差額もわかります。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>></span>年収別 手取り比較表
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>会社員の手取り比較表（2026年）</h2>
+          <p style="color:var(--text-secondary);margin-bottom:16px;">独身・扶養なし・40歳未満の概算です</p>
+          <div style="overflow-x:auto;">
+            <table class="comparison-table" id="employeeTable">
+              <thead>
+                <tr>
+                  <th>年収</th>
+                  <th>所得税</th>
+                  <th>住民税</th>
+                  <th>社会保険料</th>
+                  <th>手取り</th>
+                  <th>手取り率</th>
+                </tr>
+              </thead>
+              <tbody id="employeeBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>フリーランスの手取り比較表（2026年・青色申告）</h2>
+          <p style="color:var(--text-secondary);margin-bottom:16px;">経費率30%・青色申告65万円控除を適用</p>
+          <div style="overflow-x:auto;">
+            <table class="comparison-table" id="freelanceTable">
+              <thead>
+                <tr>
+                  <th>売上</th>
+                  <th>所得税</th>
+                  <th>住民税</th>
+                  <th>国保+年金</th>
+                  <th>手取り</th>
+                  <th>手取り率</th>
+                </tr>
+              </thead>
+              <tbody id="freelanceBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>会社員 vs フリーランス 手取り差額</h2>
+          <div style="overflow-x:auto;">
+            <table class="comparison-table" id="diffTable">
+              <thead>
+                <tr>
+                  <th>年収/売上</th>
+                  <th>会社員 手取り</th>
+                  <th>フリーランス 手取り</th>
+                  <th>差額</th>
+                </tr>
+              </thead>
+              <tbody id="diffBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="premium-cta" id="premiumCta">
+          <div class="premium-badge">PRO</div>
+          <h3>詳細PDFレポートを保存</h3>
+          <p>計算結果を見やすいPDFレポートで出力。</p>
+          <div class="premium-price">&#165;500<span class="premium-price-note">（税込・買い切り）</span></div>
+          <a href="https://buy.stripe.com/4gMfZi4zZ8Ei9KMenq6EU04" class="btn btn-lg btn-premium">PDFレポートを購入する</a>
+          <p class="premium-secure">Stripe安全決済</p>
+        </div>
+
+        <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </section>
+
+      <!-- SEO Content -->
+      <section class="content-section">
+        <h2>年収別の手取り額を徹底解説</h2>
+
+        <h3>手取り額の計算方法</h3>
+        <p>手取り額は、年収（額面）から所得税・住民税・社会保険料を差し引いた金額です。日本の税制は累進課税制度を採用しているため、年収が高くなるほど税率も上がり、手取り率は下がっていきます。</p>
+
+        <p>会社員の場合、社会保険料（健康保険料・厚生年金保険料・雇用保険料）は会社と折半ですが、フリーランスは全額自己負担のため、同じ年収でも手取り額に大きな差が出ます。</p>
+
+        <h3>年収帯別の特徴</h3>
+
+        <h4>年収300万〜500万円（手取り率 約77%〜75%）</h4>
+        <p>この年収帯は所得税率が5%〜10%と低めです。社会保険料の負担比率が最も高く感じる帯域で、額面の約15%が社会保険料として差し引かれます。節税の余地は限定的ですが、ふるさと納税やiDeCoの活用で数万円の節税が可能です。</p>
+
+        <h4>年収600万〜800万円（手取り率 約74%〜72%）</h4>
+        <p>所得税率が10%〜20%に上がる帯域です。この年収帯から節税対策の効果が大きくなります。住宅ローン控除、生命保険料控除、ふるさと納税、iDeCoなどを最大限活用することで、年間10万〜30万円の節税が見込めます。</p>
+
+        <h4>年収1,000万〜1,500万円（手取り率 約72%〜67%）</h4>
+        <p>所得税率が20%〜33%に達し、手取り率の低下が顕著になります。この年収帯では、各種控除の所得制限に引っかかりやすくなります。配偶者控除（1,000万円超で適用外）、基礎控除の縮小（2,400万円超）などに注意が必要です。</p>
+
+        <h4>年収1,500万〜2,000万円（手取り率 約67%〜62%）</h4>
+        <p>所得税率33%〜40%の高税率帯です。年収2,000万円を超えると年末調整ができなくなり、確定申告が必須となります。法人化による節税メリットが大きくなる年収帯でもあります。</p>
+
+        <h3>会社員とフリーランスの手取り比較</h3>
+        <p>同じ年収（売上）の場合、フリーランスの方が一般的に手取りが少なくなります。主な理由は以下の通りです：</p>
+        <ul>
+          <li><strong>社会保険料</strong>：会社員は会社と折半だが、フリーランスは全額自己負担</li>
+          <li><strong>年金</strong>：会社員は厚生年金（手厚い）、フリーランスは国民年金（定額）</li>
+          <li><strong>給与所得控除</strong>：会社員には最大195万円の給与所得控除がある</li>
+        </ul>
+        <p>ただし、フリーランスには以下のメリットがあります：</p>
+        <ul>
+          <li>経費を幅広く計上できる（家賃・通信費・交通費等の按分）</li>
+          <li>青色申告特別控除（最大65万円）</li>
+          <li>小規模企業共済（全額所得控除）</li>
+          <li>事業に必要な支出は全て経費にできる柔軟性</li>
+        </ul>
+
+        <h3>手取りを増やすための節税テクニック</h3>
+        <p>年収に関わらず、以下の方法で手取りを増やすことができます：</p>
+        <ul>
+          <li><strong>ふるさと納税</strong>：実質2,000円で各地の返礼品がもらえる</li>
+          <li><strong>iDeCo</strong>：掛金が全額所得控除（会社員は月2.3万円まで）</li>
+          <li><strong>生命保険料控除</strong>：最大12万円の所得控除</li>
+          <li><strong>医療費控除</strong>：年間10万円超の医療費がある場合</li>
+          <li><strong>住宅ローン控除</strong>：最大13年間、ローン残高の0.7%を税額控除</li>
+        </ul>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>よくある質問</h2>
+        <details class="faq-item">
+          <summary>年収400万円の手取りはいくらですか？</summary>
+          <div class="faq-answer">
+            年収400万円の会社員（独身・扶養なし）の手取りは約315万円です。内訳は、所得税約8万円、住民税約18万円、社会保険料約59万円です。月額では約26万円の手取りとなります。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>会社員とフリーランスで手取りはどれくらい違いますか？</summary>
+          <div class="faq-answer">
+            同じ年収500万円の場合、会社員の手取りは約387万円、フリーランス（経費率30%・青色申告）の手取りは約353万円で、約34万円の差があります。ただし、フリーランスは経費計上の幅が広いため、実質的な差はケースにより異なります。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>年収が上がると手取り率は下がりますか？</summary>
+          <div class="faq-answer">
+            はい、累進課税のため年収が上がるほど手取り率は下がります。年収300万円で約79%、年収1,000万円で約72%、年収2,000万円で約62%程度です。
+          </div>
+        </details>
+      </section>
+
+      <!-- Affiliate -->
+      <div class="affiliate-section">
+        <h3>確定申告・税金計算をラクにするなら</h3>
+        <p>クラウド会計ソフトで日々の収支管理から確定申告まで全自動。副業・フリーランスの方にもおすすめ。</p>
+        <div class="affiliate-links">
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        ※ 本ツールの計算結果は概算であり、正確な税額を保証するものではありません。実際の申告にあたっては、税理士や最寄りの税務署にご相談ください。
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>税金シミュレーター</h4>
+          <p>フリーランス・個人事業主のための無料税金計算ツール。2026年最新税制対応。</p>
+        </div>
+        <div class="footer-links">
+          <h5>計算ツール</h5>
+          <ul>
+            <li><a href="/tools/tax-reform-2026/">2026年改正チェッカー</a></li>
+            <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
+            <li><a href="/tools/freelance-income/">手取り計算</a></li>
+            <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="/tools/refund-calculator/">還付金計算</a></li>
+            <li><a href="/tools/consumption-tax/">消費税計算</a></li>
+            <li><a href="/tools/income-comparison/">年収手取り比較</a></li>
+            <li><a href="/tools/ideco-simulation/">iDeCo節税</a></li>
+            <li><a href="/tools/expense-guide/">経費ガイド</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var incomes = [300,400,500,600,700,800,900,1000,1200,1500,2000];
+
+    function calcSalaryDeduction(salary) {
+      if (salary <= 1625000) return 550000;
+      if (salary <= 1800000) return salary * 0.4 - 100000;
+      if (salary <= 3600000) return salary * 0.3 + 80000;
+      if (salary <= 6600000) return salary * 0.2 + 440000;
+      if (salary <= 8500000) return salary * 0.1 + 1100000;
+      return 1950000;
+    }
+
+    function calcBasicDeduction(income) {
+      var m = income / 10000;
+      if (m <= 132) return 950000;
+      if (m <= 200) return 880000;
+      if (m <= 475) return 680000;
+      if (m <= 665) return 630000;
+      if (m <= 850) return 580000;
+      if (m <= 2350) return 480000;
+      return 0;
+    }
+
+    function calcIncomeTax(taxable) {
+      var tax;
+      if (taxable <= 1950000) tax = taxable * 0.05;
+      else if (taxable <= 3300000) tax = taxable * 0.10 - 97500;
+      else if (taxable <= 6950000) tax = taxable * 0.20 - 427500;
+      else if (taxable <= 9000000) tax = taxable * 0.23 - 636000;
+      else if (taxable <= 18000000) tax = taxable * 0.33 - 1536000;
+      else tax = taxable * 0.40 - 2796000;
+      return Math.max(0, Math.floor(tax * 1.021));
+    }
+
+    function calcEmployee(salaryMan) {
+      var salary = salaryMan * 10000;
+      var deduction = calcSalaryDeduction(salary);
+      var income = Math.max(0, salary - deduction);
+      var basic = calcBasicDeduction(income);
+      var social = Math.floor(salary * 0.15); // 健保+厚年+雇用
+      var taxable = Math.max(0, income - basic - social);
+      var incomeTax = calcIncomeTax(taxable);
+      var residentTax = Math.max(0, Math.floor(taxable * 0.10 + 5000));
+      var takeHome = salary - incomeTax - residentTax - social;
+      return { incomeTax: incomeTax, residentTax: residentTax, social: social, takeHome: takeHome };
+    }
+
+    function calcFreelance(revenueMan) {
+      var revenue = revenueMan * 10000;
+      var expenses = revenue * 0.3;
+      var blueDeduction = 650000;
+      var income = Math.max(0, revenue - expenses - blueDeduction);
+      var basic = calcBasicDeduction(income);
+      var nhi = Math.min(Math.floor(revenue * 0.10), 1060000);
+      var pension = 16980 * 12;
+      var social = nhi + pension;
+      var taxable = Math.max(0, income - basic);
+      var incomeTax = calcIncomeTax(taxable);
+      var residentTax = Math.max(0, Math.floor(taxable * 0.10 + 5000));
+      var takeHome = revenue - expenses - incomeTax - residentTax - social;
+      return { incomeTax: incomeTax, residentTax: residentTax, social: social, takeHome: takeHome };
+    }
+
+    function yen(n) { return '&yen;' + Math.round(n).toLocaleString(); }
+    function pct(n, total) { return (n / total * 100).toFixed(1) + '%'; }
+
+    var empBody = document.getElementById('employeeBody');
+    var flBody = document.getElementById('freelanceBody');
+    var diffBody = document.getElementById('diffBody');
+
+    incomes.forEach(function(inc) {
+      var e = calcEmployee(inc);
+      var f = calcFreelance(inc);
+      var salary = inc * 10000;
+
+      empBody.innerHTML += '<tr><td><strong>' + inc + '万円</strong></td><td>' + yen(e.incomeTax) + '</td><td>' + yen(e.residentTax) + '</td><td>' + yen(e.social) + '</td><td><strong>' + yen(e.takeHome) + '</strong></td><td>' + pct(e.takeHome, salary) + '</td></tr>';
+
+      flBody.innerHTML += '<tr><td><strong>' + inc + '万円</strong></td><td>' + yen(f.incomeTax) + '</td><td>' + yen(f.residentTax) + '</td><td>' + yen(f.social) + '</td><td><strong>' + yen(f.takeHome) + '</strong></td><td>' + pct(f.takeHome, salary) + '</td></tr>';
+
+      var diff = e.takeHome - f.takeHome;
+      var diffClass = diff > 0 ? 'color:#22c55e' : 'color:#ef4444';
+      diffBody.innerHTML += '<tr><td><strong>' + inc + '万円</strong></td><td>' + yen(e.takeHome) + '</td><td>' + yen(f.takeHome) + '</td><td style="' + diffClass + ';font-weight:700;">' + (diff > 0 ? '+' : '') + yen(diff) + '</td></tr>';
+    });
+  })();
+  </script>
+
+  <style>
+  .comparison-table { width:100%; border-collapse:collapse; font-size:14px; }
+  .comparison-table th, .comparison-table td { padding:10px 12px; text-align:right; border-bottom:1px solid var(--border); }
+  .comparison-table th { background:var(--card-bg); color:var(--text-secondary); font-weight:600; position:sticky; top:0; }
+  .comparison-table td:first-child, .comparison-table th:first-child { text-align:left; }
+  .comparison-table tr:hover { background:var(--accent)10; }
+  @media (max-width:640px) {
+    .comparison-table { font-size:12px; }
+    .comparison-table th, .comparison-table td { padding:6px 8px; }
+  }
+  </style>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フリーランス経費ガイド｜経費項目チェックリスト＆家事按分計算【2026年】</title>
+  <meta name="description" content="フリーランス・個人事業主の経費項目を一覧チェック。家事按分の自動計算、業種別の経費率目安表付き。何が経費になるか迷ったらこのガイドで確認。">
+  <meta name="keywords" content="フリーランス 経費 一覧, 個人事業主 経費 何が, 経費 計上 できるもの, フリーランス 経費率">
+  <meta property="og:title" content="フリーランス経費ガイド【2026年】">
+  <meta property="og:description" content="フリーランスの経費項目チェックリスト＆家事按分計算。業種別の経費率目安表も。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools-mauve.vercel.app/tools/expense-guide/">
+  <link rel="canonical" href="https://tax-tools-mauve.vercel.app/tools/expense-guide/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "フリーランス経費ガイド",
+    "url": "https://tax-tools-mauve.vercel.app/tools/expense-guide/",
+    "description": "フリーランスの経費項目チェックリストと家事按分計算ツール",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "フリーランスの経費率の目安はどれくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "業種によって異なりますが、一般的な目安は以下の通りです。ITエンジニア・プログラマー：20〜30%、デザイナー・クリエイター：25〜35%、ライター・翻訳：15〜25%、コンサルタント：15〜25%、飲食業：50〜65%。経費率が極端に高い場合は税務調査の対象になりやすいため注意が必要です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "家事按分とは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "家事按分とは、自宅を仕事場として使っている場合に、家賃や光熱費などの生活費の一部を事業経費として計上する方法です。按分割合は使用面積や使用時間で合理的に算出します。例えば、自宅の30%を仕事に使っている場合、家賃の30%を経費にできます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "経費にできるものとできないものの違いは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "経費にできるのは「事業に直接関連する支出」です。パソコン、ソフトウェア、通信費、交通費、書籍、セミナー費などが該当します。経費にできないのは、所得税・住民税・国民健康保険料（社会保険料控除で処理）、生活費、趣味の支出、罰金・過料などです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "10万円以上のパソコンは一括で経費にできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "10万円未満は一括で経費計上可能、10万円以上20万円未満は一括償却資産として3年均等償却、20万円以上30万円未満は青色申告の少額減価償却資産の特例で一括経費計上可能（年間合計300万円まで）、30万円以上は通常の減価償却（4年）が必要です。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>フリーランス経費ガイド</h1>
+      <p>何が経費になる？経費項目チェックリストと家事按分計算ツール。業種別の経費率目安も解説。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>></span>フリーランス経費ガイド
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <!-- 経費チェックリスト -->
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>経費項目チェックリスト</h2>
+          <p style="color:var(--text-secondary);margin-bottom:16px;">該当する項目にチェックして、年間の経費概算を確認しましょう。</p>
+
+          <div id="expenseChecklist" class="expense-checklist"></div>
+
+          <div class="expense-total" id="expenseTotal" style="margin-top:20px;padding:16px;border-radius:8px;background:var(--accent)10;border:1px solid var(--accent);display:none;">
+            <span style="font-size:14px;color:var(--text-secondary);">チェックした経費の年間概算合計</span>
+            <div style="font-size:28px;font-weight:800;color:var(--accent);" id="totalExpenseAmount">-</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 家事按分計算 -->
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>家事按分計算ツール</h2>
+          <p style="color:var(--text-secondary);margin-bottom:16px;">自宅で仕事をしている場合の経費按分額を計算します。</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rent">月額家賃（円）</label>
+              <input type="number" id="rent" placeholder="例: 80000" min="0">
+            </div>
+            <div class="form-group">
+              <label for="rentRatio">仕事使用割合（%）</label>
+              <input type="number" id="rentRatio" placeholder="例: 30" min="0" max="100" value="30">
+              <div class="hint">使用面積や時間で按分</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="utility">月額光熱費（円）</label>
+              <input type="number" id="utility" placeholder="例: 15000" min="0">
+            </div>
+            <div class="form-group">
+              <label for="utilityRatio">仕事使用割合（%）</label>
+              <input type="number" id="utilityRatio" placeholder="例: 25" min="0" max="100" value="25">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="internet">月額通信費（円）</label>
+              <input type="number" id="internet" placeholder="例: 6000" min="0">
+            </div>
+            <div class="form-group">
+              <label for="internetRatio">仕事使用割合（%）</label>
+              <input type="number" id="internetRatio" placeholder="例: 50" min="0" max="100" value="50">
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="calculateProration()">按分額を計算する</button>
+
+          <div id="prorationResult" style="display:none;margin-top:20px;">
+            <div class="result-grid" id="prorationGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 業種別経費率 -->
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>業種別 経費率の目安</h2>
+          <div style="overflow-x:auto;">
+            <table class="comparison-table">
+              <thead>
+                <tr><th>業種</th><th>経費率の目安</th><th>主な経費項目</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>ITエンジニア・プログラマー</td><td>20〜30%</td><td>PC・ソフト・サーバー費・通信費・書籍</td></tr>
+                <tr><td>Webデザイナー</td><td>25〜35%</td><td>PC・ソフト（Adobe等）・フォント・素材費</td></tr>
+                <tr><td>ライター・翻訳</td><td>15〜25%</td><td>PC・通信費・書籍・取材交通費</td></tr>
+                <tr><td>コンサルタント</td><td>15〜25%</td><td>交通費・会議費・接待交際費・書籍</td></tr>
+                <tr><td>YouTuber・動画制作</td><td>30〜50%</td><td>撮影機材・編集ソフト・スタジオ代・衣装</td></tr>
+                <tr><td>カメラマン</td><td>30〜40%</td><td>カメラ・レンズ・編集ソフト・交通費</td></tr>
+                <tr><td>飲食業</td><td>50〜65%</td><td>原材料費・家賃・光熱費・人件費</td></tr>
+                <tr><td>小売・EC</td><td>55〜70%</td><td>仕入原価・送料・梱包材・広告費</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="premium-cta" id="premiumCta">
+          <div class="premium-badge">PRO</div>
+          <h3>詳細PDFレポートを保存</h3>
+          <p>計算結果を見やすいPDFレポートで出力。</p>
+          <div class="premium-price">&#165;500<span class="premium-price-note">（税込・買い切り）</span></div>
+          <a href="https://buy.stripe.com/4gMfZi4zZ8Ei9KMenq6EU04" class="btn btn-lg btn-premium">PDFレポートを購入する</a>
+          <p class="premium-secure">Stripe安全決済</p>
+        </div>
+
+        <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </section>
+
+      <!-- SEO Content -->
+      <section class="content-section">
+        <h2>フリーランスの経費を徹底解説 — 何が経費になる？</h2>
+
+        <h3>経費計上の基本ルール</h3>
+        <p>フリーランス（個人事業主）が経費として計上できるのは、「事業を行うために直接必要な支出」です。国税庁は「その年の収入金額を得るために直接要した費用」と定義しています。重要なのは「事業との関連性」と「必要性」を合理的に説明できることです。</p>
+
+        <p>経費の判断に迷ったときは、「この支出がなければ事業の売上を得られなかったか？」と自問してみてください。答えがYESなら経費になる可能性が高いです。</p>
+
+        <h3>主な経費項目と勘定科目</h3>
+
+        <h4>通信費</h4>
+        <p>インターネット回線、携帯電話料金、レンタルサーバー代、ドメイン代などが該当します。自宅と共用の場合は家事按分が必要です。携帯電話は使用時間の割合（例：業務50%）で按分するのが一般的です。</p>
+
+        <h4>消耗品費</h4>
+        <p>10万円未満のPC周辺機器、文房具、プリンターインク、USBメモリなどが該当します。10万円以上の場合は固定資産として減価償却が必要です（青色申告なら30万円未満まで一括経費計上可能）。</p>
+
+        <h4>旅費交通費</h4>
+        <p>打ち合わせや取材のための電車代、タクシー代、飛行機代、駐車場代などです。ICカードの履歴やレシートを保管しておきましょう。通勤定期は家事按分の対象になることもあります。</p>
+
+        <h4>接待交際費</h4>
+        <p>クライアントとの会食、打ち合わせのカフェ代、お歳暮・お中元などの贈答品が該当します。個人事業主には接待交際費の上限がないため、事業に関連する支出であれば全額経費にできます。ただし、金額が大きい場合は税務調査で説明を求められることがあります。</p>
+
+        <h4>地代家賃（家事按分）</h4>
+        <p>自宅兼事務所の家賃は、仕事に使っている面積の割合で按分できます。例えば、60㎡のマンションで15㎡を仕事部屋として使っている場合、家賃の25%を経費にできます。賃貸契約書と間取り図を保管しておきましょう。</p>
+
+        <h4>水道光熱費（家事按分）</h4>
+        <p>電気代、ガス代、水道代も家事按分で一部を経費にできます。電気代は使用時間で按分するのが一般的です（例：1日8時間仕事 = 33%）。ガスや水道は事業での使用割合が少ないため、按分率は低めに設定するのが無難です。</p>
+
+        <h3>経費にできないもの</h3>
+        <ul>
+          <li><strong>所得税・住民税</strong>：税金そのものは経費にならない（社会保険料控除で処理）</li>
+          <li><strong>国民健康保険料・国民年金</strong>：経費ではなく社会保険料控除</li>
+          <li><strong>生活費</strong>：食費、衣服（仕事用の制服等を除く）、娯楽費</li>
+          <li><strong>罰金・過料</strong>：交通違反の罰金、延滞税など</li>
+          <li><strong>家族への給与</strong>：青色事業専従者以外の家族への給与</li>
+        </ul>
+
+        <h3>家事按分の合理的な割合</h3>
+        <p>税務署が家事按分を認めるためには、按分割合が「合理的」である必要があります。以下が一般的に認められている目安です：</p>
+        <ul>
+          <li><strong>家賃</strong>：仕事専用スペースの面積割合（20〜40%が一般的）</li>
+          <li><strong>電気代</strong>：使用時間割合（25〜40%が目安）</li>
+          <li><strong>通信費</strong>：使用時間・頻度割合（30〜60%が一般的）</li>
+          <li><strong>車両関連費</strong>：走行距離の事業使用割合</li>
+        </ul>
+
+        <h3>経費率が高すぎると税務調査の対象に？</h3>
+        <p>業種ごとに標準的な経費率があり、これを大幅に超えると税務調査の対象になりやすくなります。例えば、ITエンジニアの経費率が70%を超えていると、税務署から問い合わせが来る可能性があります。経費率が高い場合は、全ての支出について領収書とその事業関連性を説明できるよう準備しておきましょう。</p>
+
+        <h3>領収書・レシートの保管方法</h3>
+        <p>経費の証拠として、領収書やレシートを7年間保管する義務があります（青色申告の場合）。電子帳簿保存法の改正により、スマホで撮影した画像データでの保存も認められています。クラウド会計ソフトのレシート撮影機能を活用すると、保管が効率化できます。</p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>よくある質問</h2>
+        <details class="faq-item">
+          <summary>フリーランスの経費率の目安はどれくらいですか？</summary>
+          <div class="faq-answer">
+            業種によって異なります。ITエンジニア：20〜30%、デザイナー：25〜35%、ライター：15〜25%、飲食業：50〜65%が目安です。経費率が業種平均を大幅に超えると税務調査の対象になりやすくなります。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>家事按分とは何ですか？</summary>
+          <div class="faq-answer">
+            自宅を仕事場として使う場合に、家賃や光熱費の一部を事業経費として計上する方法です。按分割合は使用面積や時間で合理的に算出し、税務署に説明できるようにします。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>10万円以上のパソコンは一括で経費にできますか？</summary>
+          <div class="faq-answer">
+            青色申告なら30万円未満のものは少額減価償却資産の特例で一括経費計上が可能です（年間合計300万円まで）。30万円以上は通常の減価償却（パソコンは4年）が必要です。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>経費にできないものは何ですか？</summary>
+          <div class="faq-answer">
+            所得税・住民税、国民健康保険料（社会保険料控除で処理）、生活費、趣味の支出、罰金・過料、家族への給与（青色専従者以外）などは経費にできません。
+          </div>
+        </details>
+      </section>
+
+      <!-- Affiliate -->
+      <div class="affiliate-section">
+        <h3>経費管理・確定申告をラクにするなら</h3>
+        <p>クラウド会計ソフトならレシート撮影で自動仕訳。経費管理から確定申告まで全自動です。</p>
+        <div class="affiliate-links">
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        ※ 本ガイドの情報は一般的な目安であり、個別の状況により異なります。実際の申告にあたっては、税理士や最寄りの税務署にご相談ください。
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>税金シミュレーター</h4>
+          <p>フリーランス・個人事業主のための無料税金計算ツール。2026年最新税制対応。</p>
+        </div>
+        <div class="footer-links">
+          <h5>計算ツール</h5>
+          <ul>
+            <li><a href="/tools/tax-reform-2026/">2026年改正チェッカー</a></li>
+            <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
+            <li><a href="/tools/freelance-income/">手取り計算</a></li>
+            <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="/tools/refund-calculator/">還付金計算</a></li>
+            <li><a href="/tools/consumption-tax/">消費税計算</a></li>
+            <li><a href="/tools/expense-guide/">経費ガイド</a></li>
+            <li><a href="/tools/side-job-20man/">副業20万円の壁</a></li>
+            <li><a href="/tools/crypto-tax/">仮想通貨税金</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // 経費チェックリスト
+  var expenseItems = [
+    { category: '通信費', items: [
+      { name: 'インターネット回線', monthly: 5000 },
+      { name: '携帯電話（按分）', monthly: 3000 },
+      { name: 'レンタルサーバー・ドメイン', monthly: 1500 },
+      { name: 'クラウドサービス（AWS等）', monthly: 3000 }
+    ]},
+    { category: '消耗品費', items: [
+      { name: 'PC周辺機器・パーツ', monthly: 2000 },
+      { name: '文房具・事務用品', monthly: 500 },
+      { name: 'プリンターインク・用紙', monthly: 800 }
+    ]},
+    { category: 'ソフトウェア・サブスク', items: [
+      { name: 'Adobe Creative Cloud', monthly: 6480 },
+      { name: 'Microsoft 365', monthly: 1284 },
+      { name: 'その他ソフトウェア', monthly: 2000 },
+      { name: '会計ソフト（freee等）', monthly: 2000 }
+    ]},
+    { category: '地代家賃（按分）', items: [
+      { name: '家賃（按分30%の場合）', monthly: 24000 },
+      { name: '駐車場代（按分）', monthly: 3000 }
+    ]},
+    { category: '水道光熱費（按分）', items: [
+      { name: '電気代（按分30%の場合）', monthly: 3000 },
+      { name: 'ガス代（按分）', monthly: 500 }
+    ]},
+    { category: '旅費交通費', items: [
+      { name: '電車・バス代', monthly: 5000 },
+      { name: 'タクシー代', monthly: 2000 },
+      { name: 'ガソリン代（按分）', monthly: 3000 }
+    ]},
+    { category: '接待交際費', items: [
+      { name: 'クライアントとの会食', monthly: 5000 },
+      { name: 'カフェ代（打合せ）', monthly: 3000 },
+      { name: '贈答品', monthly: 1000 }
+    ]},
+    { category: '研修・書籍', items: [
+      { name: '書籍・電子書籍', monthly: 2000 },
+      { name: 'セミナー・研修費', monthly: 3000 },
+      { name: 'オンライン学習サービス', monthly: 1500 }
+    ]},
+    { category: '保険・その他', items: [
+      { name: '損害保険（按分）', monthly: 1000 },
+      { name: '業務用保険', monthly: 2000 },
+      { name: '外注費（月平均）', monthly: 10000 },
+      { name: '広告宣伝費', monthly: 5000 }
+    ]}
+  ];
+
+  function buildChecklist() {
+    var container = document.getElementById('expenseChecklist');
+    var html = '';
+    expenseItems.forEach(function(cat, ci) {
+      html += '<div class="expense-category"><h3 style="font-size:16px;color:var(--accent);margin:16px 0 8px;">' + cat.category + '</h3>';
+      cat.items.forEach(function(item, ii) {
+        var id = 'exp_' + ci + '_' + ii;
+        html += '<label class="expense-item" style="display:flex;align-items:center;gap:8px;padding:6px 0;cursor:pointer;">' +
+          '<input type="checkbox" class="expense-check" data-monthly="' + item.monthly + '" onchange="updateTotal()">' +
+          '<span>' + item.name + '</span>' +
+          '<span style="margin-left:auto;color:var(--text-secondary);font-size:13px;">月 &yen;' + item.monthly.toLocaleString() + '</span></label>';
+      });
+      html += '</div>';
+    });
+    container.innerHTML = html;
+  }
+
+  function updateTotal() {
+    var checks = document.querySelectorAll('.expense-check:checked');
+    var total = 0;
+    checks.forEach(function(cb) { total += parseInt(cb.dataset.monthly); });
+    var annual = total * 12;
+    var totalEl = document.getElementById('expenseTotal');
+    if (checks.length > 0) {
+      totalEl.style.display = 'block';
+      document.getElementById('totalExpenseAmount').textContent = '年間 \u00a5' + annual.toLocaleString() + '（月 \u00a5' + total.toLocaleString() + '）';
+    } else {
+      totalEl.style.display = 'none';
+    }
+  }
+
+  function calculateProration() {
+    var rent = parseInt(document.getElementById('rent').value) || 0;
+    var rentR = parseInt(document.getElementById('rentRatio').value) || 0;
+    var util = parseInt(document.getElementById('utility').value) || 0;
+    var utilR = parseInt(document.getElementById('utilityRatio').value) || 0;
+    var net = parseInt(document.getElementById('internet').value) || 0;
+    var netR = parseInt(document.getElementById('internetRatio').value) || 0;
+
+    var rentExp = Math.floor(rent * rentR / 100);
+    var utilExp = Math.floor(util * utilR / 100);
+    var netExp = Math.floor(net * netR / 100);
+    var monthlyTotal = rentExp + utilExp + netExp;
+    var annualTotal = monthlyTotal * 12;
+
+    var grid = document.getElementById('prorationGrid');
+    grid.innerHTML =
+      '<div class="result-item"><span class="result-label">家賃（按分' + rentR + '%）</span><span class="result-value">月 &yen;' + rentExp.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">光熱費（按分' + utilR + '%）</span><span class="result-value">月 &yen;' + utilExp.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">通信費（按分' + netR + '%）</span><span class="result-value">月 &yen;' + netExp.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">家事按分 月額合計</span><span class="result-value result-highlight">&yen;' + monthlyTotal.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">家事按分 年額合計</span><span class="result-value result-highlight" style="color:#22c55e;font-size:1.3em;">&yen;' + annualTotal.toLocaleString() + '</span></div>';
+
+    document.getElementById('prorationResult').style.display = 'block';
+  }
+
+  buildChecklist();
+  </script>
+
+  <style>
+  .comparison-table { width:100%; border-collapse:collapse; font-size:14px; }
+  .comparison-table th, .comparison-table td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--border); }
+  .comparison-table th { background:var(--card-bg); color:var(--text-secondary); font-weight:600; }
+  .expense-category { border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  .expense-item:hover { background: var(--accent)08; border-radius: 4px; }
+  .expense-check { width: 18px; height: 18px; accent-color: var(--accent); }
+  @media (max-width:640px) {
+    .comparison-table { font-size:12px; }
+    .comparison-table th, .comparison-table td { padding:6px 8px; }
+  }
+  </style>
+</body>
+</html>

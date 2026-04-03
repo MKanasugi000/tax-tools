@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暗号資産（仮想通貨）税金計算ツール｜ビットコイン確定申告シミュレーション【2026年】</title>
+  <meta name="description" content="仮想通貨・暗号資産の税金を無料で自動計算。ビットコイン・イーサリアムの売却益から所得税・住民税を算出。雑所得の確定申告方法も解説。">
+  <meta name="keywords" content="仮想通貨 税金 計算, ビットコイン 確定申告, 暗号資産 税金 いくら, 仮想通貨 雑所得 計算">
+  <meta property="og:title" content="暗号資産（仮想通貨）税金計算ツール【2026年】">
+  <meta property="og:description" content="仮想通貨の売却益・年収を入力するだけで税額を自動計算。損益通算の注意点も解説。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools-mauve.vercel.app/tools/crypto-tax/">
+  <link rel="canonical" href="https://tax-tools-mauve.vercel.app/tools/crypto-tax/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "暗号資産（仮想通貨）税金計算ツール",
+    "url": "https://tax-tools-mauve.vercel.app/tools/crypto-tax/",
+    "description": "仮想通貨の売却益から所得税・住民税を自動計算するシミュレーター",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "仮想通貨の利益にかかる税金はいくらですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "仮想通貨の利益は雑所得として総合課税されます。税率は他の所得と合算した金額に応じて5%〜45%の累進課税が適用され、さらに住民税10%が加算されます。最大で利益の約55%が税金となります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "仮想通貨の損失は他の所得と損益通算できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "仮想通貨（暗号資産）の損失は、給与所得や事業所得など他の所得との損益通算はできません。また、株式の譲渡損失のような損失の繰越控除もありません。ただし、同じ雑所得内（他の仮想通貨の利益など）では相殺可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "仮想通貨の確定申告はいくらから必要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "給与所得者の場合、仮想通貨を含む雑所得の合計が年間20万円を超えると確定申告が必要です。ただし、住民税は20万円以下でも申告が必要です。フリーランスの方は利益が1円でも確定申告が必要です。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>暗号資産（仮想通貨）税金計算ツール</h1>
+      <p>ビットコイン・イーサリアムなどの売却益から、所得税・住民税を自動計算。雑所得としての税額がわかります。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>></span>暗号資産（仮想通貨）税金計算
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>収入・利益を入力</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="annualSalary">給与年収（万円）</label>
+              <input type="number" id="annualSalary" placeholder="例: 500" min="0">
+              <div class="hint">本業の額面年収（0の場合は無職/フリーランス）</div>
+            </div>
+            <div class="form-group">
+              <label for="cryptoProfit">仮想通貨の利益（万円）</label>
+              <input type="number" id="cryptoProfit" placeholder="例: 100" min="0">
+              <div class="hint">売却価格 - 取得価格 の合計</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="otherMiscIncome">その他の雑所得（万円）</label>
+              <input type="number" id="otherMiscIncome" placeholder="例: 0" min="0" value="0">
+              <div class="hint">FX・アフィリエイト等</div>
+            </div>
+            <div class="form-group">
+              <label for="filingStatus">申告区分</label>
+              <select id="filingStatus">
+                <option value="employee">会社員（年末調整済み）</option>
+                <option value="freelance">フリーランス・個人事業主</option>
+                <option value="none">無職・学生</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="calculateCryptoTax()">税額を計算する</button>
+        </div>
+      </section>
+
+      <section id="resultSection" style="display:none;">
+        <div class="result-card">
+          <h2>計算結果</h2>
+          <div class="result-grid" id="resultGrid"></div>
+          <div id="warningBox" style="margin-top:16px;"></div>
+        </div>
+
+        <div class="premium-cta" id="premiumCta">
+          <div class="premium-badge">PRO</div>
+          <h3>詳細PDFレポートを保存</h3>
+          <p>計算結果を見やすいPDFレポートで出力。</p>
+          <div class="premium-price">&#165;500<span class="premium-price-note">（税込・買い切り）</span></div>
+          <a href="https://buy.stripe.com/4gMfZi4zZ8Ei9KMenq6EU04" class="btn btn-lg btn-premium">PDFレポートを購入する</a>
+          <p class="premium-secure">Stripe安全決済</p>
+        </div>
+
+        <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </section>
+
+      <!-- SEO Content -->
+      <section class="content-section">
+        <h2>仮想通貨・暗号資産の税金の仕組みを完全解説</h2>
+
+        <h3>仮想通貨の利益は「雑所得」として課税される</h3>
+        <p>ビットコインやイーサリアムなどの暗号資産を売却して利益が出た場合、その利益は「雑所得」として所得税の課税対象となります。雑所得は給与所得などと合算して「総合課税」されるため、本業の収入が多いほど仮想通貨の利益にかかる税率も高くなります。</p>
+
+        <p>株式投資の場合は申告分離課税（一律20.315%）が適用されますが、仮想通貨にはこの優遇措置がありません。所得税の最高税率45%に住民税10%、復興特別所得税を加えると、<strong>最大約55%が税金</strong>として徴収されることになります。</p>
+
+        <h3>課税対象となるタイミング</h3>
+        <p>仮想通貨で課税が発生するのは以下のタイミングです：</p>
+        <ul>
+          <li><strong>売却時</strong>：仮想通貨を日本円に換金したとき</li>
+          <li><strong>交換時</strong>：仮想通貨同士を交換したとき（BTCでETHを購入など）</li>
+          <li><strong>商品購入時</strong>：仮想通貨で商品やサービスを購入したとき</li>
+          <li><strong>マイニング報酬</strong>：マイニングやステーキングで報酬を受け取ったとき</li>
+          <li><strong>エアドロップ</strong>：無償で仮想通貨を受け取ったとき</li>
+        </ul>
+        <p>単に保有しているだけでは課税されません（含み益には課税なし）。</p>
+
+        <h3>損益通算ができない点に注意</h3>
+        <p>仮想通貨の最大のデメリットの一つが、<strong>損益通算の制限</strong>です。仮想通貨の損失は、給与所得や事業所得など他の所得と相殺（損益通算）することができません。また、株式のように損失を翌年以降に繰り越す「繰越控除」も認められていません。</p>
+
+        <p>ただし、同じ雑所得の中では相殺が可能です。例えば、ビットコインで100万円の利益が出て、イーサリアムで30万円の損失が出た場合、雑所得は70万円として申告できます。</p>
+
+        <h3>確定申告が必要なケース</h3>
+        <p>以下のいずれかに該当する場合、確定申告が必要です：</p>
+        <ul>
+          <li>給与所得者：仮想通貨を含む雑所得が年間20万円超</li>
+          <li>フリーランス・個人事業主：利益が1円でもあれば申告必要</li>
+          <li>無職・学生：基礎控除（48万円〜95万円）を超える所得がある場合</li>
+        </ul>
+
+        <h3>取得価格の計算方法</h3>
+        <p>仮想通貨の利益を計算するためには、取得価格（原価）を正確に把握する必要があります。国税庁が認めている計算方法は「移動平均法」と「総平均法」の2つです。個人の場合は「総平均法」が原則ですが、届出により移動平均法も選択できます。</p>
+
+        <p>複数の取引所を利用している場合や、DeFiでの取引がある場合は計算が複雑になるため、クリプタクトやGtaxなどの損益計算ツールの利用をおすすめします。</p>
+
+        <h3>2026年時点での制度と今後の見通し</h3>
+        <p>2026年現在、暗号資産の税制改正に関する議論が続いています。業界団体からは「申告分離課税の導入」や「損失繰越控除の適用」が要望されていますが、まだ実現には至っていません。現時点では、雑所得としての総合課税が継続しています。</p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>よくある質問</h2>
+        <details class="faq-item">
+          <summary>仮想通貨の利益にかかる税金はいくらですか？</summary>
+          <div class="faq-answer">
+            仮想通貨の利益は雑所得として総合課税されます。税率は所得税5%〜45%に住民税10%を加えた15%〜55%です。例えば、年収500万円の会社員が100万円の仮想通貨利益を得た場合、約30万円程度の税金がかかります。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>仮想通貨の損失は他の所得と損益通算できますか？</summary>
+          <div class="faq-answer">
+            できません。仮想通貨の損失は給与所得や事業所得との損益通算ができず、損失の繰越控除もありません。ただし、同じ年度内の他の仮想通貨の利益とは相殺可能です。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>仮想通貨の確定申告はいくらから必要ですか？</summary>
+          <div class="faq-answer">
+            給与所得者は雑所得の合計が年間20万円を超えた場合に確定申告が必要です。フリーランスは利益が1円でもあれば申告必要。住民税は20万円以下でも別途申告が必要です。
+          </div>
+        </details>
+      </section>
+
+      <!-- Affiliate -->
+      <div class="affiliate-section">
+        <h3>仮想通貨の確定申告をラクにするなら</h3>
+        <p>クラウド会計ソフトなら、仮想通貨の損益計算から確定申告書の作成まで効率化できます。</p>
+        <div class="affiliate-links">
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        ※ 本ツールの計算結果は概算であり、正確な税額を保証するものではありません。実際の申告にあたっては、税理士や最寄りの税務署にご相談ください。
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>税金シミュレーター</h4>
+          <p>フリーランス・個人事業主のための無料税金計算ツール。2026年最新税制対応。</p>
+        </div>
+        <div class="footer-links">
+          <h5>計算ツール</h5>
+          <ul>
+            <li><a href="/tools/tax-reform-2026/">2026年改正チェッカー</a></li>
+            <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
+            <li><a href="/tools/freelance-income/">手取り計算</a></li>
+            <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="/tools/refund-calculator/">還付金計算</a></li>
+            <li><a href="/tools/consumption-tax/">消費税計算</a></li>
+            <li><a href="/tools/crypto-tax/">仮想通貨税金</a></li>
+            <li><a href="/tools/ideco-simulation/">iDeCo節税</a></li>
+            <li><a href="/tools/expense-guide/">経費ガイド</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function calculateCryptoTax() {
+    var salary = (parseFloat(document.getElementById('annualSalary').value) || 0) * 10000;
+    var cryptoProfit = (parseFloat(document.getElementById('cryptoProfit').value) || 0) * 10000;
+    var otherMisc = (parseFloat(document.getElementById('otherMiscIncome').value) || 0) * 10000;
+    var status = document.getElementById('filingStatus').value;
+
+    var totalMisc = cryptoProfit + otherMisc;
+
+    // 給与所得控除
+    var salaryDeduction = 0;
+    if (status === 'employee') {
+      if (salary <= 1625000) salaryDeduction = 550000;
+      else if (salary <= 1800000) salaryDeduction = salary * 0.4 - 100000;
+      else if (salary <= 3600000) salaryDeduction = salary * 0.3 + 80000;
+      else if (salary <= 6600000) salaryDeduction = salary * 0.2 + 440000;
+      else if (salary <= 8500000) salaryDeduction = salary * 0.1 + 1100000;
+      else salaryDeduction = 1950000;
+    }
+
+    var salaryIncome = Math.max(0, salary - salaryDeduction);
+    var totalIncome = salaryIncome + totalMisc;
+
+    // 基礎控除（2026年）
+    var totalIncomeMan = totalIncome / 10000;
+    var basicDeduction;
+    if (totalIncomeMan <= 132) basicDeduction = 950000;
+    else if (totalIncomeMan <= 200) basicDeduction = 880000;
+    else if (totalIncomeMan <= 475) basicDeduction = 680000;
+    else if (totalIncomeMan <= 665) basicDeduction = 630000;
+    else if (totalIncomeMan <= 850) basicDeduction = 580000;
+    else if (totalIncomeMan <= 2350) basicDeduction = 480000;
+    else basicDeduction = 0;
+
+    // 社保控除概算（給与の15%）
+    var socialInsurance = status === 'employee' ? Math.floor(salary * 0.15) : 0;
+
+    var taxableIncome = Math.max(0, totalIncome - basicDeduction - socialInsurance);
+
+    // 所得税
+    var totalTax = calcTax(taxableIncome);
+
+    // 仮想通貨なしの場合の税額
+    var taxableWithout = Math.max(0, salaryIncome - basicDeduction - socialInsurance);
+    var taxWithout = calcTax(taxableWithout);
+
+    // 仮想通貨分の追加税額
+    var cryptoIncomeTax = totalTax - taxWithout;
+
+    // 住民税（仮想通貨分）
+    var cryptoResidentTax = Math.floor(totalMisc * 0.10);
+
+    // 合計
+    var cryptoTotalTax = cryptoIncomeTax + cryptoResidentTax;
+    var effectiveRate = totalMisc > 0 ? (cryptoTotalTax / totalMisc * 100).toFixed(1) : 0;
+
+    var grid = document.getElementById('resultGrid');
+    grid.innerHTML =
+      '<div class="result-item"><span class="result-label">仮想通貨の利益</span><span class="result-value">&yen;' + cryptoProfit.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">雑所得合計</span><span class="result-value">&yen;' + totalMisc.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">所得税（仮想通貨分）</span><span class="result-value">&yen;' + cryptoIncomeTax.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">住民税（仮想通貨分）</span><span class="result-value">&yen;' + cryptoResidentTax.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">仮想通貨にかかる税金合計</span><span class="result-value result-highlight">&yen;' + cryptoTotalTax.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">実効税率</span><span class="result-value">' + effectiveRate + '%</span></div>' +
+      '<div class="result-item"><span class="result-label">手取り利益</span><span class="result-value">&yen;' + (totalMisc - cryptoTotalTax).toLocaleString() + '</span></div>';
+
+    // 警告
+    var warningBox = document.getElementById('warningBox');
+    var warnings = [];
+    if (cryptoProfit > 0) {
+      warnings.push('仮想通貨の損失は給与所得・事業所得との損益通算ができません。');
+      warnings.push('損失の翌年繰越控除も認められていません。');
+    }
+    if (effectiveRate > 30) {
+      warnings.push('実効税率が30%を超えています。法人化の検討も有効かもしれません。');
+    }
+    if (warnings.length > 0) {
+      warningBox.innerHTML = '<div style="padding:16px;border-radius:8px;background:#f59e0b20;border:1px solid #f59e0b;">' +
+        '<strong style="color:#f59e0b;">&#9888; 注意点</strong><ul style="margin:8px 0 0;padding-left:20px;">' +
+        warnings.map(function(w) { return '<li>' + w + '</li>'; }).join('') + '</ul></div>';
+    }
+
+    document.getElementById('resultSection').style.display = 'block';
+    document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function calcTax(taxable) {
+    var tax;
+    if (taxable <= 1950000) tax = taxable * 0.05;
+    else if (taxable <= 3300000) tax = taxable * 0.10 - 97500;
+    else if (taxable <= 6950000) tax = taxable * 0.20 - 427500;
+    else if (taxable <= 9000000) tax = taxable * 0.23 - 636000;
+    else if (taxable <= 18000000) tax = taxable * 0.33 - 1536000;
+    else tax = taxable * 0.40 - 2796000;
+    return Math.max(0, Math.floor(tax * 1.021));
+  }
+  </script>
+</body>
+</html>

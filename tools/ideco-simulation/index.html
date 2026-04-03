@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iDeCo節税シミュレーター｜年間の節税額を自動計算【2026年】</title>
+  <meta name="description" content="iDeCo（個人型確定拠出年金）の節税額を無料で自動計算。年収と掛金を入力するだけで所得税・住民税の軽減額がわかります。職業別の掛金上限額も解説。">
+  <meta name="keywords" content="iDeCo 節税 計算, iDeCo シミュレーション, イデコ 節税額, iDeCo メリット 計算">
+  <meta property="og:title" content="iDeCo節税シミュレーター【2026年】">
+  <meta property="og:description" content="年収と掛金を入力するだけでiDeCoの年間節税額を自動計算。所得税+住民税の軽減額がわかります。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools-mauve.vercel.app/tools/ideco-simulation/">
+  <link rel="canonical" href="https://tax-tools-mauve.vercel.app/tools/ideco-simulation/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "iDeCo節税シミュレーター",
+    "url": "https://tax-tools-mauve.vercel.app/tools/ideco-simulation/",
+    "description": "iDeCoの節税額を年収と掛金から自動計算するツール",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "iDeCoでどれくらい節税できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "節税額は年収と掛金によって異なります。例えば年収500万円の会社員が月2.3万円（年27.6万円）を拠出した場合、年間約5.5万円の節税効果があります。30年間では約165万円の節税になります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "iDeCoの掛金上限額はいくらですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "職業によって異なります。自営業者は月6.8万円（年81.6万円）、企業年金なしの会社員は月2.3万円（年27.6万円）、企業年金ありの会社員は月1.2万円（年14.4万円）、公務員は月1.2万円（年14.4万円）、専業主婦(夫)は月2.3万円（年27.6万円）です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "iDeCoのデメリットは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最大のデメリットは原則60歳まで引き出せないことです。また、口座管理手数料（月数百円）がかかり、運用成績によっては元本割れのリスクもあります。ただし、掛金の全額所得控除による節税メリットは確実です。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>iDeCo節税シミュレーター</h1>
+      <p>年収と掛金を入力するだけで、iDeCoの年間節税額（所得税＋住民税）を自動計算します。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>></span>iDeCo節税シミュレーター
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>条件を入力</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="annualIncome">年収（万円）</label>
+              <input type="number" id="annualIncome" placeholder="例: 500" min="0">
+              <div class="hint">額面年収（税込）</div>
+            </div>
+            <div class="form-group">
+              <label for="occupation">職業</label>
+              <select id="occupation" onchange="updateMaxContribution()">
+                <option value="employee_no_pension">会社員（企業年金なし）</option>
+                <option value="employee_with_pension">会社員（企業年金あり）</option>
+                <option value="civil_servant">公務員</option>
+                <option value="self_employed">自営業・フリーランス</option>
+                <option value="homemaker">専業主婦（夫）</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="monthlyContrib">月額掛金（円）</label>
+              <input type="number" id="monthlyContrib" placeholder="例: 23000" min="5000" step="1000">
+              <div class="hint" id="maxHint">上限: 月23,000円（年276,000円）</div>
+            </div>
+            <div class="form-group">
+              <label for="currentAge">現在の年齢</label>
+              <input type="number" id="currentAge" placeholder="例: 35" min="20" max="64" value="35">
+              <div class="hint">iDeCoは65歳まで加入可能</div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="calculateIdeco()">節税額を計算する</button>
+        </div>
+      </section>
+
+      <section id="resultSection" style="display:none;">
+        <div class="result-card">
+          <h2>計算結果</h2>
+          <div class="result-grid" id="resultGrid"></div>
+        </div>
+
+        <!-- 掛金上限表 -->
+        <div class="calc-card" style="margin-top:24px;">
+          <h3>職業別 iDeCo掛金上限額</h3>
+          <div style="overflow-x:auto;">
+            <table class="comparison-table">
+              <thead>
+                <tr><th>職業</th><th>月額上限</th><th>年額上限</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>自営業・フリーランス</td><td>68,000円</td><td>816,000円</td></tr>
+                <tr><td>会社員（企業年金なし）</td><td>23,000円</td><td>276,000円</td></tr>
+                <tr><td>会社員（企業年金あり）</td><td>12,000円</td><td>144,000円</td></tr>
+                <tr><td>公務員</td><td>12,000円</td><td>144,000円</td></tr>
+                <tr><td>専業主婦（夫）</td><td>23,000円</td><td>276,000円</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="premium-cta" id="premiumCta">
+          <div class="premium-badge">PRO</div>
+          <h3>詳細PDFレポートを保存</h3>
+          <p>計算結果を見やすいPDFレポートで出力。</p>
+          <div class="premium-price">&#165;500<span class="premium-price-note">（税込・買い切り）</span></div>
+          <a href="https://buy.stripe.com/4gMfZi4zZ8Ei9KMenq6EU04" class="btn btn-lg btn-premium">PDFレポートを購入する</a>
+          <p class="premium-secure">Stripe安全決済</p>
+        </div>
+
+        <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </section>
+
+      <!-- SEO Content -->
+      <section class="content-section">
+        <h2>iDeCo（個人型確定拠出年金）の節税メリットを徹底解説</h2>
+
+        <h3>iDeCoとは？3つの税制メリット</h3>
+        <p>iDeCo（個人型確定拠出年金）は、自分で掛金を拠出し運用する私的年金制度です。最大の魅力は3段階の税制優遇を受けられることです：</p>
+        <ul>
+          <li><strong>拠出時</strong>：掛金が全額所得控除（所得税＋住民税が軽減）</li>
+          <li><strong>運用時</strong>：運用益が非課税（通常は20.315%課税）</li>
+          <li><strong>受取時</strong>：退職所得控除または公的年金等控除が適用</li>
+        </ul>
+
+        <h3>年収別の節税効果</h3>
+        <p>iDeCoの節税効果は、年収（所得税率）によって大きく異なります。所得税率が高いほど、同じ掛金でも節税額が大きくなります。</p>
+
+        <p>例えば、月23,000円（年276,000円）を拠出した場合の年間節税額：</p>
+        <ul>
+          <li>年収300万円（税率5%）：約41,400円</li>
+          <li>年収500万円（税率10%）：約55,200円</li>
+          <li>年収700万円（税率20%）：約82,800円</li>
+          <li>年収1,000万円（税率23%）：約91,080円</li>
+        </ul>
+
+        <h3>iDeCoの掛金上限額と職業別の違い</h3>
+        <p>iDeCoの掛金上限は職業によって異なります。最も上限が高いのは自営業・フリーランスで月68,000円（年816,000円）です。これは国民年金基金や付加年金との合計額です。会社員は企業年金の有無で23,000円または12,000円、公務員は12,000円が上限です。</p>
+
+        <p>2024年12月の制度改正により、企業型確定拠出年金に加入している会社員もiDeCoに加入しやすくなりました。掛金の上限は他の企業年金制度との合計で月55,000円です。</p>
+
+        <h3>iDeCoのデメリットと注意点</h3>
+        <p>iDeCoにはメリットだけでなく、注意すべきデメリットもあります：</p>
+        <ul>
+          <li><strong>60歳まで引き出せない</strong>：原則として60歳になるまで資産を引き出すことができません（加入期間によっては65歳まで）</li>
+          <li><strong>口座管理手数料</strong>：金融機関によって月171円〜600円程度の手数料がかかります</li>
+          <li><strong>運用リスク</strong>：投資信託を選んだ場合、元本割れのリスクがあります</li>
+          <li><strong>受取時の課税</strong>：退職金が多い場合、退職所得控除を超えた部分に課税されます</li>
+        </ul>
+
+        <h3>iDeCoと他の制度の比較</h3>
+        <p>節税目的の金融商品として、iDeCoの他にNISAや小規模企業共済があります：</p>
+        <ul>
+          <li><strong>iDeCo</strong>：所得控除（確実な節税）＋運用益非課税、60歳まで引出不可</li>
+          <li><strong>NISA</strong>：所得控除なし、運用益非課税、いつでも引出可能</li>
+          <li><strong>小規模企業共済</strong>：所得控除＋退職金控除、自営業・フリーランスのみ</li>
+        </ul>
+        <p>併用が最も効果的です。まずiDeCoとNISAの両方を活用し、自営業者はさらに小規模企業共済も検討しましょう。</p>
+
+        <h3>iDeCoの始め方</h3>
+        <p>iDeCoを始めるには、証券会社や銀行などの金融機関で口座を開設します。手数料が安いネット証券（SBI証券、楽天証券、マネックス証券など）が人気です。開設後、掛金額と運用商品を選んで積立を開始します。掛金は毎月の給与から天引き（事業主払込）か、口座振替で拠出できます。</p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>よくある質問</h2>
+        <details class="faq-item">
+          <summary>iDeCoでどれくらい節税できますか？</summary>
+          <div class="faq-answer">
+            年収と掛金によって異なります。年収500万円の会社員が月23,000円を拠出した場合、年間約55,200円の節税効果があります。30年間では約165万円の節税になり、さらに運用益も非課税です。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>iDeCoの掛金上限額はいくらですか？</summary>
+          <div class="faq-answer">
+            自営業者は月68,000円、企業年金なしの会社員は月23,000円、企業年金ありの会社員・公務員は月12,000円、専業主婦(夫)は月23,000円が上限です。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>iDeCoのデメリットは何ですか？</summary>
+          <div class="faq-answer">
+            原則60歳まで引き出せないこと、口座管理手数料がかかること、運用リスクがあることが主なデメリットです。ただし、掛金全額所得控除の節税メリットは確実に得られます。
+          </div>
+        </details>
+      </section>
+
+      <!-- Affiliate -->
+      <div class="affiliate-section">
+        <h3>確定申告・税金管理をラクにするなら</h3>
+        <p>クラウド会計ソフトならiDeCoの所得控除も自動計算。確定申告書の作成まで全自動です。</p>
+        <div class="affiliate-links">
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        ※ 本ツールの計算結果は概算であり、正確な税額を保証するものではありません。実際の申告にあたっては、税理士や最寄りの税務署にご相談ください。
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>税金シミュレーター</h4>
+          <p>フリーランス・個人事業主のための無料税金計算ツール。2026年最新税制対応。</p>
+        </div>
+        <div class="footer-links">
+          <h5>計算ツール</h5>
+          <ul>
+            <li><a href="/tools/tax-reform-2026/">2026年改正チェッカー</a></li>
+            <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
+            <li><a href="/tools/freelance-income/">手取り計算</a></li>
+            <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="/tools/refund-calculator/">還付金計算</a></li>
+            <li><a href="/tools/consumption-tax/">消費税計算</a></li>
+            <li><a href="/tools/ideco-simulation/">iDeCo節税</a></li>
+            <li><a href="/tools/side-job-20man/">副業20万円の壁</a></li>
+            <li><a href="/tools/expense-guide/">経費ガイド</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  var maxContributions = {
+    employee_no_pension: 23000,
+    employee_with_pension: 12000,
+    civil_servant: 12000,
+    self_employed: 68000,
+    homemaker: 23000
+  };
+
+  function updateMaxContribution() {
+    var occ = document.getElementById('occupation').value;
+    var max = maxContributions[occ];
+    document.getElementById('maxHint').textContent = '上限: 月' + max.toLocaleString() + '円（年' + (max * 12).toLocaleString() + '円）';
+    var input = document.getElementById('monthlyContrib');
+    if (parseInt(input.value) > max) input.value = max;
+  }
+
+  function calculateIdeco() {
+    var income = (parseFloat(document.getElementById('annualIncome').value) || 0) * 10000;
+    var occ = document.getElementById('occupation').value;
+    var monthly = parseInt(document.getElementById('monthlyContrib').value) || 0;
+    var age = parseInt(document.getElementById('currentAge').value) || 35;
+    var maxMonthly = maxContributions[occ];
+
+    if (monthly > maxMonthly) monthly = maxMonthly;
+    if (monthly < 5000) monthly = 5000;
+
+    var annual = monthly * 12;
+    var yearsToRetire = Math.max(0, 65 - age);
+
+    // 給与所得控除（会社員の場合）
+    var isEmployee = occ.indexOf('employee') !== -1 || occ === 'civil_servant';
+    var salaryDeduction = 0;
+    if (isEmployee) {
+      if (income <= 1625000) salaryDeduction = 550000;
+      else if (income <= 1800000) salaryDeduction = income * 0.4 - 100000;
+      else if (income <= 3600000) salaryDeduction = income * 0.3 + 80000;
+      else if (income <= 6600000) salaryDeduction = income * 0.2 + 440000;
+      else if (income <= 8500000) salaryDeduction = income * 0.1 + 1100000;
+      else salaryDeduction = 1950000;
+    }
+
+    var salaryIncome = isEmployee ? Math.max(0, income - salaryDeduction) : income * 0.7; // FL: 経費30%概算
+
+    // 基礎控除
+    var m = salaryIncome / 10000;
+    var basic;
+    if (m <= 132) basic = 950000;
+    else if (m <= 200) basic = 880000;
+    else if (m <= 475) basic = 680000;
+    else if (m <= 665) basic = 630000;
+    else if (m <= 850) basic = 580000;
+    else if (m <= 2350) basic = 480000;
+    else basic = 0;
+
+    var social = isEmployee ? Math.floor(income * 0.15) : (Math.min(Math.floor(income * 0.10), 1060000) + 16980 * 12);
+
+    // iDeCoなしの税額
+    var taxableWithout = Math.max(0, salaryIncome - basic - social);
+    var incomeTaxWithout = calcTax(taxableWithout);
+    var residentTaxWithout = Math.floor(taxableWithout * 0.10);
+
+    // iDeCoありの税額
+    var taxableWith = Math.max(0, salaryIncome - basic - social - annual);
+    var incomeTaxWith = calcTax(taxableWith);
+    var residentTaxWith = Math.floor(taxableWith * 0.10);
+
+    // 節税額
+    var incomeTaxSaving = incomeTaxWithout - incomeTaxWith;
+    var residentTaxSaving = residentTaxWithout - residentTaxWith;
+    var totalSaving = incomeTaxSaving + residentTaxSaving;
+    var lifetimeSaving = totalSaving * yearsToRetire;
+    var totalContribution = annual * yearsToRetire;
+
+    // 所得税率の判定
+    var taxRate;
+    if (taxableWithout <= 1950000) taxRate = '5%';
+    else if (taxableWithout <= 3300000) taxRate = '10%';
+    else if (taxableWithout <= 6950000) taxRate = '20%';
+    else if (taxableWithout <= 9000000) taxRate = '23%';
+    else if (taxableWithout <= 18000000) taxRate = '33%';
+    else taxRate = '40%+';
+
+    var grid = document.getElementById('resultGrid');
+    grid.innerHTML =
+      '<div class="result-item"><span class="result-label">年間掛金</span><span class="result-value">&yen;' + annual.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">適用所得税率</span><span class="result-value">' + taxRate + '</span></div>' +
+      '<div class="result-item"><span class="result-label">所得税の軽減額（年間）</span><span class="result-value" style="color:#22c55e;">&yen;' + incomeTaxSaving.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">住民税の軽減額（年間）</span><span class="result-value" style="color:#22c55e;">&yen;' + residentTaxSaving.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">年間の節税額合計</span><span class="result-value result-highlight" style="color:#22c55e;font-size:1.5em;">&yen;' + totalSaving.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">65歳までの累計節税額（' + yearsToRetire + '年間）</span><span class="result-value" style="color:#22c55e;">&yen;' + lifetimeSaving.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">65歳までの累計掛金</span><span class="result-value">&yen;' + totalContribution.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">節税率（節税額/掛金）</span><span class="result-value">' + (annual > 0 ? (totalSaving / annual * 100).toFixed(1) : 0) + '%</span></div>';
+
+    document.getElementById('resultSection').style.display = 'block';
+    document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function calcTax(taxable) {
+    var tax;
+    if (taxable <= 1950000) tax = taxable * 0.05;
+    else if (taxable <= 3300000) tax = taxable * 0.10 - 97500;
+    else if (taxable <= 6950000) tax = taxable * 0.20 - 427500;
+    else if (taxable <= 9000000) tax = taxable * 0.23 - 636000;
+    else if (taxable <= 18000000) tax = taxable * 0.33 - 1536000;
+    else tax = taxable * 0.40 - 2796000;
+    return Math.max(0, Math.floor(tax * 1.021));
+  }
+  </script>
+
+  <style>
+  .comparison-table { width:100%; border-collapse:collapse; font-size:14px; }
+  .comparison-table th, .comparison-table td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--border); }
+  .comparison-table th { background:var(--card-bg); color:var(--text-secondary); font-weight:600; }
+  .comparison-table td:nth-child(2), .comparison-table td:nth-child(3) { text-align:right; }
+  </style>
+</body>
+</html>

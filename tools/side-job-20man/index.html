@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>副業20万円の壁シミュレーター｜確定申告が必要か判定【2026年】</title>
+  <meta name="description" content="副業収入が20万円以下でも確定申告は必要？副業20万円の壁を無料シミュレーション。所得税・住民税の申告義務を判定し、税額を自動計算します。">
+  <meta name="keywords" content="副業 20万円 確定申告, 副業 税金 いくらから, 副業 20万円以下 住民税, 副業 確定申告 不要">
+  <meta property="og:title" content="副業20万円の壁シミュレーター【2026年】">
+  <meta property="og:description" content="副業収入を入力するだけで確定申告が必要か判定。20万円以下でも住民税申告が必要な理由も解説。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tax-tools-mauve.vercel.app/tools/side-job-20man/">
+  <link rel="canonical" href="https://tax-tools-mauve.vercel.app/tools/side-job-20man/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "副業20万円の壁シミュレーター",
+    "url": "https://tax-tools-mauve.vercel.app/tools/side-job-20man/",
+    "description": "副業収入から確定申告の要否を判定し、税額を自動計算",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "副業収入が20万円以下なら確定申告は不要ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "給与所得者で副業の所得（収入-経費）が年間20万円以下の場合、所得税の確定申告は不要です。ただし、住民税の申告は別途必要です。市区町村の窓口で住民税の申告を行ってください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "副業20万円以下でも住民税の申告が必要な理由は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "所得税の20万円ルールは国税（所得税）にのみ適用されます。住民税（地方税）には20万円の免除ルールがないため、副業所得が1円でもあれば住民税の申告が必要です。申告しないと無申告加算税が課される可能性があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "副業の「所得」と「収入」の違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "「収入」は副業で受け取った金額の合計、「所得」は収入から必要経費を差し引いた金額です。20万円の壁は「所得」で判定されるため、経費を差し引いた後の金額が20万円以下であれば確定申告は不要です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "副業の確定申告をしないとどうなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "確定申告が必要なのに申告しないと、無申告加算税（15〜20%）や延滞税が課されます。悪質な場合は重加算税（35〜40%）が適用されることもあります。期限後でも自主的に申告すれば、ペナルティが軽減されます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536232737607009" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>
+        税金シミュレーター
+      </a>
+      <nav class="site-nav">
+        <a href="/tools/tax-reform-2026/" style="color:#5eead4;font-weight:700;">改正チェッカー</a>
+        <a href="/tools/invoice-tax/">インボイス</a>
+        <a href="/tools/freelance-income/">手取り計算</a>
+        <a href="/tools/side-job-tax/">副業税金</a>
+        <a href="/tools/refund-calculator/">還付金</a>
+        <a href="/tools/consumption-tax/">消費税</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>副業20万円の壁シミュレーター</h1>
+      <p>副業収入を入力するだけで、確定申告が必要かどうかを即座に判定。税額も自動計算します。</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">ホーム</a><span>></span>副業20万円の壁シミュレーター
+      </div>
+
+      <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+      <section class="calc-section">
+        <div class="calc-card">
+          <h2>副業情報を入力</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mainSalary">本業の年収（万円）</label>
+              <input type="number" id="mainSalary" placeholder="例: 450" min="0">
+              <div class="hint">給与の額面年収（税込）</div>
+            </div>
+            <div class="form-group">
+              <label for="sideRevenue">副業の年間収入（万円）</label>
+              <input type="number" id="sideRevenue" placeholder="例: 30" min="0">
+              <div class="hint">副業で受け取った総額</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sideExpenses">副業の経費（万円）</label>
+              <input type="number" id="sideExpenses" placeholder="例: 5" min="0">
+              <div class="hint">副業に使った経費</div>
+            </div>
+            <div class="form-group">
+              <label for="incomeType">副業の種類</label>
+              <select id="incomeType">
+                <option value="misc">雑所得（クラウドソーシング等）</option>
+                <option value="business">事業所得（開業届あり）</option>
+                <option value="salary">給与所得（アルバイト等）</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg" id="calcBtn" onclick="calculate()">判定する</button>
+        </div>
+      </section>
+
+      <section id="resultSection" style="display:none;">
+        <div class="result-card">
+          <h2>判定結果</h2>
+          <div id="judgmentBox" class="judgment-box"></div>
+          <div class="result-grid" id="resultGrid"></div>
+        </div>
+
+        <div class="premium-cta" id="premiumCta">
+          <div class="premium-badge">PRO</div>
+          <h3>詳細PDFレポートを保存</h3>
+          <p>計算結果を見やすいPDFレポートで出力。</p>
+          <div class="premium-price">&#165;500<span class="premium-price-note">（税込・買い切り）</span></div>
+          <a href="https://buy.stripe.com/4gMfZi4zZ8Ei9KMenq6EU04" class="btn btn-lg btn-premium">PDFレポートを購入する</a>
+          <p class="premium-secure">Stripe安全決済</p>
+        </div>
+
+        <ins class="adsbygoogle ad-slot" style="display:block" data-ad-client="ca-pub-5536232737607009" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </section>
+
+      <!-- SEO Content -->
+      <section class="content-section">
+        <h2>副業20万円の壁とは？確定申告が必要なケースを徹底解説</h2>
+
+        <h3>副業の「20万円ルール」の正しい理解</h3>
+        <p>「副業の収入が20万円以下なら確定申告は不要」というルールは、多くの会社員に知られています。しかし、この20万円ルールには重要な注意点がいくつかあります。まず、この20万円は「収入」ではなく「所得」で判定されます。所得とは、収入から必要経費を差し引いた金額のことです。例えば、副業の収入が30万円でも経費が15万円あれば、所得は15万円となり確定申告は不要です。</p>
+
+        <p>また、この20万円ルールは「給与所得者」にのみ適用されます。具体的には、年末調整を受けている会社員やパート・アルバイトの方が対象です。フリーランスや個人事業主の方には適用されず、所得が1円でもあれば確定申告が必要です。</p>
+
+        <h3>20万円以下でも住民税の申告は必要</h3>
+        <p>副業の所得が20万円以下で確定申告が不要な場合でも、<strong>住民税の申告は別途必要</strong>です。これは多くの人が見落とすポイントです。所得税の20万円ルールは国税にのみ適用されるもので、住民税（地方税）にはこの免除規定がありません。</p>
+
+        <p>住民税の申告を怠ると、後日市区町村から問い合わせが来たり、無申告加算税が課される可能性があります。住民税の申告は、お住まいの市区町村の窓口で行えます。確定申告を行えば住民税の申告は不要ですので、手間を考えると確定申告してしまった方が簡単なケースも多いです。</p>
+
+        <h3>確定申告が必要になるケース</h3>
+        <p>以下のいずれかに該当する場合、副業の確定申告が必要です：</p>
+        <ul>
+          <li>副業の所得（収入-経費）が年間20万円を超える場合</li>
+          <li>副業が給与所得の場合（20万円以下でも2か所以上から給与を受けている場合）</li>
+          <li>医療費控除やふるさと納税の還付申告を行う場合（この場合、副業所得も合算して申告が必要）</li>
+          <li>年収2,000万円を超える給与所得者</li>
+          <li>源泉徴収されている報酬がある場合（還付を受けたいとき）</li>
+        </ul>
+
+        <h3>副業の種類と所得区分</h3>
+        <p>副業の所得区分は、その内容によって異なります。クラウドソーシングやフリマアプリでの販売は「雑所得」、開業届を出して継続的に行っている場合は「事業所得」、アルバイトやパートは「給与所得」に分類されます。事業所得として申告できれば、青色申告特別控除（最大65万円）や損益通算のメリットがあります。</p>
+
+        <h3>2026年の税制改正による影響</h3>
+        <p>2026年の税制改正では、基礎控除の引き上げが実施されています。所得が132万円以下の場合、基礎控除が95万円に引き上げられました。これにより、副業所得にかかる税負担が軽減される可能性があります。本シミュレーターは2026年最新の税制に対応しています。</p>
+
+        <h3>確定申告しないとどうなる？ペナルティの詳細</h3>
+        <p>確定申告が必要なのに申告しなかった場合、以下のペナルティが課されます：</p>
+        <ul>
+          <li><strong>無申告加算税</strong>：納付すべき税額の15%（50万円超の部分は20%）</li>
+          <li><strong>延滞税</strong>：年率2.4%〜14.6%（期間による）</li>
+          <li><strong>重加算税</strong>：悪質な場合は35%〜40%</li>
+        </ul>
+        <p>ただし、期限後であっても税務署から指摘される前に自主的に申告すれば、無申告加算税は5%に軽減されます。心当たりがある方は早めに申告することをおすすめします。</p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>よくある質問</h2>
+        <details class="faq-item">
+          <summary>副業収入が20万円以下なら確定申告は不要ですか？</summary>
+          <div class="faq-answer">
+            給与所得者で副業の所得（収入-経費）が年間20万円以下の場合、所得税の確定申告は不要です。ただし、住民税の申告は別途必要です。また、医療費控除やふるさと納税の還付申告を行う場合は、副業所得も合算して申告する必要があります。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>20万円以下でも住民税の申告が必要な理由は？</summary>
+          <div class="faq-answer">
+            所得税の20万円ルールは国税にのみ適用されます。住民税（地方税）にはこの免除ルールがないため、副業所得が1円でもあれば住民税の申告が必要です。お住まいの市区町村の窓口で手続きできます。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>副業の「所得」と「収入」の違いは何ですか？</summary>
+          <div class="faq-answer">
+            「収入」は副業で受け取った金額の合計、「所得」は収入から必要経費を差し引いた金額です。20万円の壁は「所得」で判定されるため、経費を正しく計上することが重要です。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>確定申告をしないとどうなりますか？</summary>
+          <div class="faq-answer">
+            確定申告が必要なのに申告しないと、無申告加算税（15〜20%）や延滞税が課されます。自主的に期限後申告すれば加算税は5%に軽減されますので、早めの対応をおすすめします。
+          </div>
+        </details>
+      </section>
+
+      <!-- Affiliate -->
+      <div class="affiliate-section">
+        <h3>副業の確定申告をラクにするなら</h3>
+        <p>クラウド会計ソフトなら、副業の収支管理から確定申告書の作成まで全自動。スマホでも使えます。</p>
+        <div class="affiliate-links">
+          <a href="https://www.freee.co.jp/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">freee会計を無料で試す →</a>
+          <a href="https://biz.moneyforward.com/tax_return/" target="_blank" rel="noopener noreferrer" class="affiliate-btn">マネーフォワード確定申告 →</a>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        ※ 本ツールの判定結果は概算であり、正確な税額を保証するものではありません。実際の申告にあたっては、税理士や最寄りの税務署にご相談ください。
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>税金シミュレーター</h4>
+          <p>フリーランス・個人事業主のための無料税金計算ツール。2026年最新税制対応。</p>
+        </div>
+        <div class="footer-links">
+          <h5>計算ツール</h5>
+          <ul>
+            <li><a href="/tools/tax-reform-2026/">2026年改正チェッカー</a></li>
+            <li><a href="/tools/invoice-tax/">インボイス税額計算</a></li>
+            <li><a href="/tools/freelance-income/">手取り計算</a></li>
+            <li><a href="/tools/side-job-tax/">副業住民税計算</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>その他</h5>
+          <ul>
+            <li><a href="/tools/refund-calculator/">還付金計算</a></li>
+            <li><a href="/tools/consumption-tax/">消費税計算</a></li>
+            <li><a href="/tools/side-job-20man/">副業20万円の壁</a></li>
+            <li><a href="/tools/crypto-tax/">仮想通貨税金</a></li>
+            <li><a href="/tools/ideco-simulation/">iDeCo節税</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 税金シミュレーター All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  function calculate() {
+    var mainSalary = parseFloat(document.getElementById('mainSalary').value) || 0;
+    var sideRevenue = parseFloat(document.getElementById('sideRevenue').value) || 0;
+    var sideExpenses = parseFloat(document.getElementById('sideExpenses').value) || 0;
+    var incomeType = document.getElementById('incomeType').value;
+
+    var sideIncome = Math.max(0, sideRevenue - sideExpenses); // 所得
+    var sideIncomeYen = sideIncome * 10000;
+    var mainSalaryYen = mainSalary * 10000;
+
+    // 判定
+    var needsTaxReturn = false;
+    var needsResidentTaxReturn = sideIncome > 0;
+    var reason = '';
+
+    if (incomeType === 'salary') {
+      // 給与所得の場合、2か所以上から給与 → 原則確定申告必要
+      needsTaxReturn = sideIncome > 20;
+      reason = sideIncome > 20
+        ? '副業の給与所得が20万円を超えているため、確定申告が必要です。'
+        : '副業の給与所得が20万円以下のため、所得税の確定申告は不要です。ただし、住民税の申告は必要です。';
+    } else {
+      needsTaxReturn = sideIncome > 20;
+      reason = sideIncome > 20
+        ? '副業の所得（収入-経費）が20万円を超えているため、確定申告が必要です。'
+        : '副業の所得が20万円以下のため、所得税の確定申告は不要です。ただし、住民税の申告は必要です。';
+    }
+
+    if (sideIncome <= 0) {
+      reason = '副業の所得がゼロ以下のため、確定申告・住民税申告ともに不要です。';
+      needsResidentTaxReturn = false;
+    }
+
+    // 税額計算（副業分）
+    // 給与所得控除（本業）
+    var salaryDeduction = calcSalaryDeduction(mainSalaryYen);
+    var mainIncome = Math.max(0, mainSalaryYen - salaryDeduction);
+
+    // 合計所得
+    var totalIncome = mainIncome + sideIncomeYen;
+
+    // 基礎控除（2026年）
+    var totalIncomeMan = totalIncome / 10000;
+    var basicDeduction;
+    if (totalIncomeMan <= 132) basicDeduction = 950000;
+    else if (totalIncomeMan <= 200) basicDeduction = 880000;
+    else if (totalIncomeMan <= 475) basicDeduction = 680000;
+    else if (totalIncomeMan <= 665) basicDeduction = 630000;
+    else if (totalIncomeMan <= 850) basicDeduction = 580000;
+    else if (totalIncomeMan <= 2350) basicDeduction = 480000;
+    else basicDeduction = 0;
+
+    var taxableIncome = Math.max(0, totalIncome - basicDeduction - 380000); // 社保控除概算
+
+    // 所得税（副業分の概算）
+    var totalTax = calcIncomeTax(taxableIncome);
+    var mainTaxableIncome = Math.max(0, mainIncome - basicDeduction - 380000);
+    var mainTax = calcIncomeTax(mainTaxableIncome);
+    var sideTax = Math.max(0, totalTax - mainTax);
+
+    // 住民税（副業分 約10%）
+    var sideResidentTax = Math.floor(sideIncomeYen * 0.10);
+
+    // 表示
+    var judgmentBox = document.getElementById('judgmentBox');
+    var color = needsTaxReturn ? '#ef4444' : '#22c55e';
+    var icon = needsTaxReturn ? '!' : '&#10003;';
+
+    judgmentBox.innerHTML =
+      '<div style="text-align:center;padding:24px;border-radius:12px;background:' + color + '20;border:2px solid ' + color + ';">' +
+      '<div style="font-size:48px;color:' + color + ';font-weight:800;margin-bottom:8px;">' +
+      (needsTaxReturn ? '確定申告が必要' : '確定申告は不要') + '</div>' +
+      '<p style="color:var(--text-secondary);margin:0;">' + reason + '</p>' +
+      (needsResidentTaxReturn && !needsTaxReturn ? '<p style="color:#f59e0b;font-weight:700;margin-top:12px;">&#9888; 住民税の申告は必要です</p>' : '') +
+      '</div>';
+
+    var grid = document.getElementById('resultGrid');
+    grid.innerHTML =
+      '<div class="result-item"><span class="result-label">副業の所得</span><span class="result-value">' + formatMan(sideIncome) + '</span></div>' +
+      '<div class="result-item"><span class="result-label">20万円との差額</span><span class="result-value">' + formatMan(sideIncome - 20) + '</span></div>' +
+      '<div class="result-item"><span class="result-label">副業分の所得税（概算）</span><span class="result-value">&yen;' + sideTax.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">副業分の住民税（概算）</span><span class="result-value">&yen;' + sideResidentTax.toLocaleString() + '</span></div>' +
+      '<div class="result-item"><span class="result-label">副業にかかる税金合計</span><span class="result-value result-highlight">&yen;' + (sideTax + sideResidentTax).toLocaleString() + '</span></div>';
+
+    document.getElementById('resultSection').style.display = 'block';
+    document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function calcSalaryDeduction(salary) {
+    if (salary <= 1625000) return 550000;
+    if (salary <= 1800000) return salary * 0.4 - 100000;
+    if (salary <= 3600000) return salary * 0.3 + 80000;
+    if (salary <= 6600000) return salary * 0.2 + 440000;
+    if (salary <= 8500000) return salary * 0.1 + 1100000;
+    return 1950000;
+  }
+
+  function calcIncomeTax(taxable) {
+    var tax;
+    if (taxable <= 1950000) tax = taxable * 0.05;
+    else if (taxable <= 3300000) tax = taxable * 0.10 - 97500;
+    else if (taxable <= 6950000) tax = taxable * 0.20 - 427500;
+    else if (taxable <= 9000000) tax = taxable * 0.23 - 636000;
+    else if (taxable <= 18000000) tax = taxable * 0.33 - 1536000;
+    else tax = taxable * 0.40 - 2796000;
+    return Math.max(0, Math.floor(tax * 1.021));
+  }
+
+  function formatMan(val) {
+    if (val >= 0) return val.toFixed(1) + '万円';
+    return '-' + Math.abs(val).toFixed(1) + '万円';
+  }
+  </script>
+</body>
+</html>
